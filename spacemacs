@@ -49,17 +49,19 @@ values."
      wakatime
 
      ;; Other Tools
-     (org :variables
-           org-enable-github-support t
-           org-enable-priority-commands t)
+     ;; (org :variables
+     ;;       org-enable-github-support t
+     ;;       org-enable-priority-commands t)
+     org
      osx
      games
      xkcd
      speed-reading
      command-log
      semantic
-     (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
+     colors
+     ;; (colors :variables
+             ;; colors-enable-nyan-cat-progress-bar t)
 
      ;; Others
      emacs-lisp
@@ -287,53 +289,54 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
   ;; (setq flyspell-issue-welcome-flag nil) ;; fix flyspell problem
-  (turn-on-fci-mode)
+
+  ;; (turn-on-fci-mode)
 
 
   ;; 2-space indent
-  (setq-default indent-tabs-mode nil)
+  ;; (setq-default indent-tabs-mode nil)
 
-  (setq-default
-   tab-width 2
-   js-indent-level 2
-   javascript-indent-level 2
-   ;; js2-mode
-   js2-basic-offset 2
-   ;; web-mode
-   css-indent-offset 2
-   ;; HTML offset indentation
-   web-mode-markup-indent-offset 2
-   ;; CSS offset indentation
-   web-mode-css-indent-offset 2
-   ;; Script offset indentation (for JavaScript, Java, PHP, etc.)
-   web-mode-code-indent-offset 2
-   ;; By default, tag attributes are indented like this:
-   ;; fixed indentation with web-mode-attr-indent-offset
-   web-mode-attr-indent-offset 2)
-
-
+  ;; (setq-default
+  ;;  tab-width 2
+  ;;  js-indent-level 2
+  ;;  javascript-indent-level 2
+  ;;  ;; js2-mode
+  ;;  js2-basic-offset 2
+  ;;  ;; web-mode
+  ;;  css-indent-offset 2
+  ;;  ;; HTML offset indentation
+  ;;  web-mode-markup-indent-offset 2
+  ;;  ;; CSS offset indentation
+  ;;  web-mode-css-indent-offset 2
+  ;;  ;; Script offset indentation (for JavaScript, Java, PHP, etc.)
+  ;;  web-mode-code-indent-offset 2
+  ;;  ;; By default, tag attributes are indented like this:
+  ;;  ;; fixed indentation with web-mode-attr-indent-offset
+  ;;  web-mode-attr-indent-offset 2)
 
 
-  ;; web mode config
-  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
-
-  (with-eval-after-load 'web-mode
-    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
 
-  ;; org mode config
-  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-  (setq org-bullets-bullet-list '("♨" "❦" "❧" "☪"))
-  (setq org-agenda-files '("~/Dropbox/org/gtd.org"))
+  ;; ;; web mode config
+  ;; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+
+  ;; (with-eval-after-load 'web-mode
+  ;;   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+  ;;   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+  ;;   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+
+  ;; ;; org mode config
+  ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  ;; (setq org-bullets-bullet-list '("♨" "❦" "❧" "☪"))
+  (setq org-agenda-files '("~/Dropbox/org/gtd.org" "~/Documents/Development/Mobile/PhoneGap/aihealthcare/todo.org"))
   (setq org-capture-templates
         '(("t" "Todo" entry (file+datetree "~/Dropbox/org/gtd.org")
            "* TODO %?\n %i\n %a")
@@ -341,24 +344,35 @@ you should place you code here."
            "* %?\nEntered on %U\n %i\n %a")
           ;; ("n" "Note" entry (file "~/Dropbox/wiki/index.org")
           ;;  "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+          ("p" "Current Project" entry (file+headline "~/Documents/Development/Mobile/PhoneGap/aihealthcare/todo.org" "Project")
+           "* TODO %?\n %i\n %a")
           ("b" "Book" entry (file+headline "~/Dropbox/org/book.org" "Book")
            "* TODO %?\nEntered on %U\n %i\n %a")
           ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
            "* %?\nEntered on %U\n %i\n %a")))
-  ;; turn on soft wrapping mode for org mode
-  (add-hook 'org-mode-hook (lambda ()
-                             (setq truncate-lines nil)))
+  ;; ;; turn on soft wrapping mode for org mode
+  ;; (add-hook 'org-mode-hook (lambda ()
+  ;;                            (setq truncate-lines nil)))
 
 
-  (setq-default fancy-battery-mode t)
+  ;; evil-shift-round nil
+
+  ;; (setq-default fancy-battery-mode t)
 
   ;; (remove-hook 'prog-mode-hook 'spacemacs//enable-hs-minor-mode)
 
-  ;; (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+  (setenv "PATH" (concat "/Users/danielchong/.node/bin/" (getenv "PATH")))
   (setq-default dotspacemacs-configuration-layers
                 '(shell :variables shell-default-shell 'eshell))  
-  evil-shift-round nil
   (global-set-key (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)
+  (setq vc-follow-symlinks t)
+
+  ;; Increase speed reading default speed
+  (setq spray-wpm 680) 
+  (setq spray-ramp 1) 
+  (setq spray-margin-top 3) 
+  (setq spray-margin-left 1) 
+  (setq spray-height 800) 
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -371,10 +385,3 @@ you should place you code here."
  '(paradox-github-token t)
  '(wakatime-api-key "f4df4f2c-c48a-4c85-a30b-ef10ccc01755")
  '(wakatime-cli-path "/usr/local/bin/wakatime"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

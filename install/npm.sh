@@ -1,3 +1,5 @@
+# Install NPM
+
 brew install nvm
 
 nvm install 5
@@ -20,6 +22,7 @@ packages=(
     js-beautify
     tern
     typings
+    hexo-cli
 )
 
 npm install -g "${packages[@]}"
