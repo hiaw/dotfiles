@@ -9,6 +9,8 @@ brew upgrade
 
 # Install packages
 
+brew install --with-cocoa emacs
+
 apps=(
     # cli tools
     ack
@@ -22,7 +24,6 @@ apps=(
     ctags
     elixir
     erlang
-    powerfont
 )
 
 brew install "${apps[@]}"
