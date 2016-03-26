@@ -14,8 +14,7 @@ EXTRA_DIR="$HOME/.extra"
 
 ln -sfv "$DOTFILES_DIR/emacs/spacemacs" ~/.spacemacs
 ln -sfv "$DOTFILES_DIR/zsh/zshrc" ~/.zshrc
-ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~/.gemrc
 ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/git/gitignore" ~/.gitignore
 
