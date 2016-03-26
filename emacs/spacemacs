@@ -340,7 +340,7 @@ you should place you code here."
   (setq org-capture-templates
         '(("t" "Todo" entry (file+datetree "~/Dropbox/org/gtd.org")
            "* TODO %?\n %i\n %a")
-          ("n" "Note" entry (file+headline "~/Dropbox/wiki/index.org" "Note")
+          ("n" "Note" entry (file+headline "~/Dropbox/org/wiki.org" "Note")
            "* %?\nEntered on %U\n %i\n %a")
           ;; ("n" "Note" entry (file "~/Dropbox/wiki/index.org")
           ;;  "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
@@ -361,9 +361,8 @@ you should place you code here."
 
   ;; (remove-hook 'prog-mode-hook 'spacemacs//enable-hs-minor-mode)
 
-  (setenv "PATH" (concat "/Users/danielchong/.node/bin/" (getenv "PATH")))
-  (setq-default dotspacemacs-configuration-layers
-                '(shell :variables shell-default-shell 'eshell))  
+  ;; (setenv "PATH" (concat "/Users/danielchong/.node/bin/" (getenv "PATH")))
+
   (global-set-key (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)
   (setq vc-follow-symlinks t)
 

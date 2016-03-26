@@ -12,11 +12,12 @@ EXTRA_DIR="$HOME/.extra"
 
 # Bunch of symlinks
 
-ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
+ln -sfv "$DOTFILES_DIR/emacs/spacemacs" ~/.spacemacs
+ln -sfv "$DOTFILES_DIR/zsh/zshrc" ~/.zshrc
 ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
-ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
+ln -sfv "$DOTFILES_DIR/git/gitignore" ~/.gitignore
 
 # Package managers & packages
 

@@ -1,0 +1,10 @@
+bind "set completion-ignore-case on"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+
+export PATH="$HOME/.node/bin:$PATH"
