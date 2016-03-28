@@ -9,12 +9,16 @@ nvm alias default 5
 # Globally install with npm
 
 packages=(
+    babel-eslint
     bower
     brunch
     cordova
     eslint
+    eslint-config-airbnb
+    eslint-plugin-react
     grunt
     gulp
+    hexo-cli
     http-server
     ionic
     ios-deploy
@@ -22,7 +26,6 @@ packages=(
     js-beautify
     tern
     typings
-    hexo-cli
 )
 
 npm install -g "${packages[@]}"

@@ -36,6 +36,7 @@ apps=(
     transmission
     tunnelbear
     visual-studio-code
+    pgadmin3
 
     # Quick Look Plugins
     betterzipql
