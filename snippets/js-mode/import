@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: React import 
+# key: imp 
+# --
+import ${1:React}   from '${2:react}';
+$0
