@@ -8,4 +8,6 @@ const Actions = {
       $0
     }
   },
-}
+};
+
+export default Actions;

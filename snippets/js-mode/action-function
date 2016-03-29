@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: React actions function
+# key: af
+# --
+${1:fn}: (${2:arg}) => {
+  return dispatch => {
+    $0
+  };
+},

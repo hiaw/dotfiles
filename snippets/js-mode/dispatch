@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: dispatch
-# key: disp 
+# key: dispatch
 # --
 dispatch({
-  ${1:type}: ${2:Constants},
+  ${1:type}: ${2:Constants}$0,
 });

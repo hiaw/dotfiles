@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: React const 
+# key: const 
+# --
+const ${1:{ ${2:value} }} = $0;

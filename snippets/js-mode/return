@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: React return
+# key: return
+# --
+return (
+  $0
+);

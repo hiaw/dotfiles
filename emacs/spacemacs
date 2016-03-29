@@ -78,6 +78,7 @@ values."
    dotspacemacs-additional-packages
    '(
      react-snippets
+     speed-type
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape)
@@ -388,6 +389,7 @@ you should place you code here."
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
+  (push '("speed-type" . nil) evil-buffer-regexps)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
