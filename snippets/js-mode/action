@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: React actions
+# key: action 
+# --
+const Actions = {
+  ${1:fn}: (${2:arg}) => {
+    return dispatch => {
+      $0
+    }
+  },
+}
