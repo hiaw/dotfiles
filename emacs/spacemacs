@@ -34,11 +34,12 @@ values."
      ruby
      yaml
      typescript
+     elm
 
      ;; Standard tools
      git
      (auto-completion :variables
-                      auto-completion-private-snippets-directory "~/.dotfiles/snippets")
+              auto-completion-private-snippets-directory "~/.dotfiles/snippets")
      syntax-checking
      spell-checking
      spotify
@@ -84,8 +85,9 @@ values."
    dotspacemacs-additional-packages
    '(
      react-snippets
-     zone-rainbow
-     zone-sl
+     elm-yasnippets
+     ;; zone-rainbow
+     ;; zone-sl
      speed-type
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -370,9 +372,8 @@ you should place you code here."
 
   ;; (remove-hook 'prog-mode-hook 'spacemacs//enable-hs-minor-mode)
 
-  ;; (setenv "PATH" (concat "/Users/danielchong/.node/bin/" (getenv "PATH")))
-
   (global-set-key (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)
+
   (setq vc-follow-symlinks t)
 
   ;; Increase speed reading default speed
@@ -400,23 +401,23 @@ you should place you code here."
   (push '("speed-type" . emacs) evil-buffer-regexps)
 
   (setq zone-timer (run-with-idle-timer 120 t 'zone))
-  (defun zone-choose (pgm)
-    "Choose a PGM to run for `zone'."
-    (interactive
-     (list
-      (completing-read
-       "Program: "
-       (mapcar 'symbol-name zone-programs))))
-    (let ((zone-programs (list (intern pgm))))
-      (zone)))
+  ;; (defun zone-choose (pgm)
+  ;;   "Choose a PGM to run for `zone'."
+  ;;   (interactive
+  ;;    (list
+  ;;     (completing-read
+  ;;      "Program: "
+  ;;      (mapcar 'symbol-name zone-programs))))
+  ;;   (let ((zone-programs (list (intern pgm))))
+  ;;     (zone)))
   
     (setq sunshine-appid "4eb08157eec81b0707967b44615ba794")
-    (setq sunshine-location "Christchurch, New Zealand")
+    ;; (setq sunshine-location "Christchurch, New Zealand")
     (setq sunshine-show-icons t)
     (setq sunshine-units 'metric)
 
-    (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
-    (setq helm-dash-common-docsets '("Elixir" "Javascript"))
+    ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
+    ;; (setq helm-dash-common-docsets '("Elixir" "Javascript"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

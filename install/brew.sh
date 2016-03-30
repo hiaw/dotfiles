@@ -16,6 +16,7 @@ apps=(
     ack
     tree
     wget
+    elm
     # development tools
     git
     markdown

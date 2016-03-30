@@ -15,8 +15,10 @@ EXTRA_DIR="$HOME/.extra"
 ln -sfv "$DOTFILES_DIR/emacs/spacemacs" ~/.spacemacs
 ln -sfv "$DOTFILES_DIR/zsh/zshrc" ~/.zshrc
 ln -sfv "$DOTFILES_DIR/zsh/zshenv" ~/.zshenv
-ln -sfv "$DOTFILES_DIR/runcom/gemrc" ~/.gemrc
 ln -sfv "$DOTFILES_DIR/runcom/eslintrc" ~/.eslintrc
+ln -sfv "$DOTFILES_DIR/runcom/gemrc" ~/.gemrc
+ln -sfv "$DOTFILES_DIR/runcom/npmrc" ~/.npmrc
+ln -sfv "$DOTFILES_DIR/runcom/netrc" ~/.netrc
 ln -sfv "$DOTFILES_DIR/runcom/jsbeautifyrc" ~/.jsbeautifyrc
 ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/git/gitignore" ~/.gitignore
