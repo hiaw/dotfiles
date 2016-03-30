@@ -1,5 +1,37 @@
-# bind "set completion-ignore-case on"
+# Save a ton of history
+HISTFILE=~/.zhistory
+HISTSIZE=SAVEHIST=10000
+setopt sharehistory
+setopt extendedhistory
+setopt append_history # Allow multiple terminal sessions to all append to one zsh command history
+setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
+setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# Tab completion should be case-insensitive.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+# Enable completion
+autoload -U compinit
+compinit
+
+# Sourcing of other files
+source $HOME/.dotfiles/zsh/prompt
+
+# # Colors for ls.
+alias ls='ls -G'
+
+
+setopt no_beep # don't beep on error
+
+
+# Setup terminal, and turn on colors
+export TERM=xterm-256color
+export CLICOLOR=1
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+# Enable color in grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='3;33'
+
+# CTAGS Sorting in VIM/Emacs is better behaved with this in place
+export LC_COLLATE=C 
