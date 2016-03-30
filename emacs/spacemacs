@@ -69,6 +69,12 @@ values."
      search-engine
      restclient
      finance
+     emoji
+     dash
+     (geolocation :variables
+                  geolocation-enable-osx-location-service-support t
+                  geolocation-enable-weather-forecast t
+                  geolocation-enable-automatic-theme-changer nil)
 
      )
    ;; List of additional packages that will be installed without being
@@ -78,6 +84,8 @@ values."
    dotspacemacs-additional-packages
    '(
      react-snippets
+     zone-rainbow
+     zone-sl
      speed-type
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -121,14 +129,14 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-banner '000
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
    dotspacemacs-startup-lists '(recents bookmarks projects)
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
-   dotspacemacs-startup-recent-list-size 5
+   dotspacemacs-startup-recent-list-size 10 
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
@@ -389,7 +397,26 @@ you should place you code here."
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
-  (push '("speed-type" . nil) evil-buffer-regexps)
+  (push '("speed-type" . emacs) evil-buffer-regexps)
+
+  (setq zone-timer (run-with-idle-timer 120 t 'zone))
+  (defun zone-choose (pgm)
+    "Choose a PGM to run for `zone'."
+    (interactive
+     (list
+      (completing-read
+       "Program: "
+       (mapcar 'symbol-name zone-programs))))
+    (let ((zone-programs (list (intern pgm))))
+      (zone)))
+  
+    (setq sunshine-appid "4eb08157eec81b0707967b44615ba794")
+    (setq sunshine-location "Christchurch, New Zealand")
+    (setq sunshine-show-icons t)
+    (setq sunshine-units 'metric)
+
+    (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
+    (setq helm-dash-common-docsets '("Elixir" "Javascript"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

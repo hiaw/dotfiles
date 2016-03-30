@@ -1,9 +1,7 @@
 # -*- mode: snippet -*-
-# name: React actions function
+# name: ES6 arrow function
 # key: af
 # --
-${1:fn}: (${2:arg}) => {
-  return dispatch => {
-    $0
-  };
-},
+${1:(${2:arg})} => {
+  $0 
+}
