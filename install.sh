@@ -1,47 +1,27 @@
-#!/usr/bin/env bash
-
-# Get current dir (so run this script from anywhere)
-
-export DOTFILES_DIR EXTRA_DIR
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-EXTRA_DIR="$HOME/.extra"
-
-# Update dotfiles itself first
-
-[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
+# Clone Preston
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # Bunch of symlinks
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/runcom/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 
-ln -sfv "$DOTFILES_DIR/emacs/spacemacs" ~/.spacemacs
-ln -sfv "$DOTFILES_DIR/zsh/zshrc" ~/.zshrc
-ln -sfv "$DOTFILES_DIR/zsh/zshenv" ~/.zshenv
-ln -sfv "$DOTFILES_DIR/runcom/eslintrc" ~/.eslintrc
-ln -sfv "$DOTFILES_DIR/runcom/gemrc" ~/.gemrc
-ln -sfv "$DOTFILES_DIR/runcom/npmrc" ~/.npmrc
-ln -sfv "$DOTFILES_DIR/runcom/netrc" ~/.netrc
-ln -sfv "$DOTFILES_DIR/runcom/jsbeautifyrc" ~/.jsbeautifyrc
-ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
-ln -sfv "$DOTFILES_DIR/git/gitignore" ~/.gitignore
+for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/emacs/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/git/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 
 # Package managers & packages
-
-. "$DOTFILES_DIR/install/brew.sh"
-. "$DOTFILES_DIR/install/bash.sh"
-. "$DOTFILES_DIR/install/npm.sh"
-. "$DOTFILES_DIR/install/pip.sh"
+. "${ZDOTDIR:-$HOME}"/.dotfiles/install/install.sh
+. "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.sh
+. "${ZDOTDIR:-$HOME}"/.dotfiles/install/npm.sh
+# . "${ZDOTDIR:-$HOME}"/.dotfiles/install/pip.sh
 
 if [ "$(uname)" == "Darwin" ]; then
-    . "$DOTFILES_DIR/install/brew-cask.sh"
-    . "$DOTFILES_DIR/install/gem.sh"
-    ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" ~
-fi
-
-# Run tests
-
-bats test/*.bats
-
-# Install extra stuff
-
-if [ -d "$EXTRA_DIR" -a -f "$EXTRA_DIR/install.sh" ]; then
-    . "$EXTRA_DIR/install.sh"
+    . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew-cask.sh
+    # . "${ZDOTDIR:-$HOME}"/.dotfiles/install/gem.sh
 fi
