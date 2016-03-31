@@ -53,4 +53,5 @@ apps=(
 
 brew cask install "${apps[@]}"
 
+brew cask cleanup
 

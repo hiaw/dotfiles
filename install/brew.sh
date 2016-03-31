@@ -28,3 +28,5 @@ apps=(
 )
 
 brew install "${apps[@]}"
+
+brew cleanup
