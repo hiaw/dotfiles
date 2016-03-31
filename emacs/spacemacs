@@ -43,6 +43,7 @@ values."
      syntax-checking
      spell-checking
      spotify
+     shell-scripts
      (shell :variables
             shell-default-shell 'eshell
             ;; shell-default-term-shell "/bin/zsh"
