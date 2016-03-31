@@ -39,7 +39,7 @@ values."
      ;; Standard tools
      git
      (auto-completion :variables
-              auto-completion-private-snippets-directory "~/.dotfiles/snippets")
+              auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets")
      syntax-checking
      spell-checking
      spotify

@@ -1,6 +1,3 @@
-# Clone Preston
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
 # Bunch of symlinks
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/runcom/^README.md(.N); do

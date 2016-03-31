@@ -29,3 +29,5 @@ packages=(
 )
 
 npm install -g "${packages[@]}"
+
+npm cache clear
