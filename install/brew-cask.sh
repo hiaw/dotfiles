@@ -7,15 +7,19 @@ brew tap caskroom/versions
 # Install packages
 
 apps=(
+    # 1password
+    # cleanmymac
     # dash
     # screenflow
+    # sketchup
+    # slack
     # sublime-text3
+    # transmission
+    # tunnelbear
     # vlc
     # webstorm
-    1password
     a-better-finder-rename
     betterzip
-    cleanmymac
     dropbox
     firefox
     flux
@@ -26,15 +30,11 @@ apps=(
     kodi
     postgres
     rescuetime
-    sketchup
     skype
-    slack
     sourcetree
     spotify
     steam
     textmate
-    transmission
-    tunnelbear
     visual-studio-code
     pgadmin3
 
@@ -51,7 +51,6 @@ apps=(
     webpquicklook
 )
 
-brew cask install "${apps[@]}"
+brew cask install --appdir="/Applications" "${apps[@]}"
 
 brew cask cleanup
-
