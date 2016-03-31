@@ -85,7 +85,7 @@ values."
    dotspacemacs-additional-packages
    '(
      react-snippets
-     elm-yasnippets
+     ;; elm-yasnippets
      ;; zone-rainbow
      ;; zone-sl
      speed-type
@@ -138,7 +138,7 @@ values."
    dotspacemacs-startup-lists '(recents bookmarks projects)
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
-   dotspacemacs-startup-recent-list-size 10 
+   dotspacemacs-startup-recent-list-size 10
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
@@ -230,7 +230,7 @@ values."
    dotspacemacs-loading-progress-bar nil
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t 
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -279,8 +279,9 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
+
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -303,30 +304,40 @@ you should place you code here."
 
   ;; (turn-on-fci-mode)
 
+  evil-shift-round nil
+
+  (setq vc-follow-symlinks t)
+
+  ;; (setq-default fancy-battery-mode t)
+
+  ;; (remove-hook 'prog-mode-hook 'spacemacs//enable-hs-minor-mode)
+
 
   ;; 2-space indent
-  ;; (setq-default indent-tabs-mode nil)
+  (setq-default indent-tabs-mode nil)
 
-  ;; (setq-default
-  ;;  tab-width 2
-  ;;  js-indent-level 2
-  ;;  javascript-indent-level 2
-  ;;  ;; js2-mode
-  ;;  js2-basic-offset 2
-  ;;  ;; web-mode
-  ;;  css-indent-offset 2
-  ;;  ;; HTML offset indentation
-  ;;  web-mode-markup-indent-offset 2
-  ;;  ;; CSS offset indentation
-  ;;  web-mode-css-indent-offset 2
-  ;;  ;; Script offset indentation (for JavaScript, Java, PHP, etc.)
-  ;;  web-mode-code-indent-offset 2
-  ;;  ;; By default, tag attributes are indented like this:
-  ;;  ;; fixed indentation with web-mode-attr-indent-offset
-  ;;  web-mode-attr-indent-offset 2)
+  (setq-default
+   tab-width 2
+   js-indent-level 2
+   javascript-indent-level 2
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   ;; HTML offset indentation
+   web-mode-markup-indent-offset 2
+   ;; CSS offset indentation
+   web-mode-css-indent-offset 2
+   ;; Script offset indentation (for JavaScript, Java, PHP, etc.)
+   web-mode-code-indent-offset 2
+   ;; By default, tag attributes are indented like this:
+   ;; fixed indentation with web-mode-attr-indent-offset
+   web-mode-attr-indent-offset 2)
 
-
-
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   ;; ;; web mode config
   ;; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -338,69 +349,46 @@ you should place you code here."
   ;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
   ;; (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
-  ;; (with-eval-after-load 'web-mode
-  ;;   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-  ;;   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-  ;;   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-
 
   ;; ;; org mode config
-  ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-  ;; (setq org-bullets-bullet-list '("♨" "❦" "❧" "☪"))
+  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  (setq org-bullets-bullet-list '("♨" "❦" "❧" "☪"))
+
   (setq org-agenda-files '("~/Dropbox/org/gtd.org" "~/Documents/Development/Mobile/PhoneGap/aihealthcare/todo.org"))
   (setq org-capture-templates
         '(("t" "Todo" entry (file+datetree "~/Dropbox/org/gtd.org")
            "* TODO %?\n %i\n %a")
           ("n" "Note" entry (file+headline "~/Dropbox/org/wiki.org" "Note")
-           "* %?\nEntered on %U\n %i\n %a")
-          ;; ("n" "Note" entry (file "~/Dropbox/wiki/index.org")
-          ;;  "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+           "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
           ("p" "Current Project" entry (file+headline "~/Documents/Development/Mobile/PhoneGap/aihealthcare/todo.org" "Project")
            "* TODO %?\n %i\n %a")
           ("b" "Book" entry (file+headline "~/Dropbox/org/book.org" "Book")
            "* TODO %?\nEntered on %U\n %i\n %a")
           ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
            "* %?\nEntered on %U\n %i\n %a")))
+
   ;; ;; turn on soft wrapping mode for org mode
   ;; (add-hook 'org-mode-hook (lambda ()
   ;;                            (setq truncate-lines nil)))
 
 
-  ;; evil-shift-round nil
-
-  ;; (setq-default fancy-battery-mode t)
-
-  ;; (remove-hook 'prog-mode-hook 'spacemacs//enable-hs-minor-mode)
-
+  ;; CMD-/ keyboard shortcut for commenting
   (global-set-key (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)
 
-  (setq vc-follow-symlinks t)
 
   ;; Increase speed reading default speed
-  (setq spray-wpm 680) 
-  (setq spray-ramp 1) 
-  (setq spray-margin-top 3) 
-  (setq spray-margin-left 1) 
-  (setq spray-height 800) 
-
-  (setq-default
-   ;; js2-mode
-   js2-basic-offset 2
-   ;; web-mode
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
-
-  (with-eval-after-load 'web-mode
-    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-
+  (setq spray-wpm 680)
+  (setq spray-ramp 1)
+  (setq spray-margin-top 3)
+  (setq spray-margin-left 1)
+  (setq spray-height 800)
   (push '("speed-type" . emacs) evil-buffer-regexps)
 
+
+  ;; Turn on zone after idle of 2 minutes
   (setq zone-timer (run-with-idle-timer 120 t 'zone))
+
+  ;; Function for viewing different zones
   ;; (defun zone-choose (pgm)
   ;;   "Choose a PGM to run for `zone'."
   ;;   (interactive
@@ -410,14 +398,18 @@ you should place you code here."
   ;;      (mapcar 'symbol-name zone-programs))))
   ;;   (let ((zone-programs (list (intern pgm))))
   ;;     (zone)))
-  
-    (setq sunshine-appid "4eb08157eec81b0707967b44615ba794")
-    ;; (setq sunshine-location "Christchurch, New Zealand")
-    (setq sunshine-show-icons t)
-    (setq sunshine-units 'metric)
 
-    ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
-    ;; (setq helm-dash-common-docsets '("Elixir" "Javascript"))
+
+  ;; Sunshine setting to see weather forecast
+  (setq sunshine-appid "4eb08157eec81b0707967b44615ba794")
+  (setq sunshine-location "Christchurch, New Zealand")
+  (setq sunshine-show-icons t)
+  (setq sunshine-units 'metric)
+
+
+  ;; Helm Dash config
+  (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
+  (setq helm-dash-common-docsets '("Elixir" "Javascript"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
