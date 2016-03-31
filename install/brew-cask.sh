@@ -27,6 +27,7 @@ apps=(
     google-chrome
     google-drive
     handbrake
+    iterm2
     kodi
     postgres
     rescuetime
