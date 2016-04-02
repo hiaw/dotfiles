@@ -86,7 +86,12 @@ values."
    dotspacemacs-additional-packages
    '(
      react-snippets
-     ;; elm-yasnippets
+     ob-translate
+     elm-yasnippets
+     hexo
+     ;; blog-admin
+     omni-quotes
+     helm-itunes
      ;; zone-rainbow
      ;; zone-sl
      speed-type
