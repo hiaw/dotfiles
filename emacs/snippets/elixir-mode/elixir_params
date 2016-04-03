@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Elixir template bracket
+# key: %
+# --
+%{"${1:param}" => $1 }$0
