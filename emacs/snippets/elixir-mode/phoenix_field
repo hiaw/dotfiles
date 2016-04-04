@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Phoenix schema field
+# key: field
+# --
+field :${1:name}, :${2:$$(yas-choose-value '("string" "id" "binary_id" "float" "boolean" "binary" "decimal" "map" "array"))} ${3:, virtual: true}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Elixir template render
+# key: render
+# --
+<%= render "${1:hello}.html", ${2:user}: @$2 %>
