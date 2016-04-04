@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: Phoenix use view
-# key: usev
+# key: uv
 # --
 use ${1:Hello}.Web, :view
 

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Elixir template path
+# key: path
+# --
+${1:user}_path(@conn, :${2:show}, ${3:${4:user}.id})
