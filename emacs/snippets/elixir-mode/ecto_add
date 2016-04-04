@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ecto Migration add
+# key: add
+# --
+add :${1:name}, :${2:$$(yas-choose-value '("string" "id" "binary_id" "integer" "float" "boolean" "binary" "decimal" "map" "array"))} ${3:, ${4:$$(yas-choose-value '("primary_key" "default" "null" "size" "precision" "scale" ))} } ${5:, references(:${6:ref})}

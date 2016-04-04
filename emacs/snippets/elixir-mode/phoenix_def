@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Phoenix def
+# key: def
+# --
+def ${1:method}(${2:conn, }${3:%{"${4:id}" => $4}})} do
+  $0
+end
