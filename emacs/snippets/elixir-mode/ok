@@ -2,4 +2,4 @@
 # name: ok
 # key: ok
 # --
-{:ok, ${1:user}}
+{:${1:ok}, ${2:user}}
