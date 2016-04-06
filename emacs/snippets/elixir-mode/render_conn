@@ -2,4 +2,4 @@
 # name: Render Conn
 # key: rc
 # --
-render conn, "${1:show.html}", ${2:user}: $2
+render conn, "${1:show}.html", ${2:user}: $2
