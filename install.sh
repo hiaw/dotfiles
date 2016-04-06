@@ -27,5 +27,5 @@ if [ "$(uname)" == "Darwin" ]; then
     # . "${ZDOTDIR:-$HOME}"/.dotfiles/install/gem.sh
 fi
 
-defaults write -g InitialKeyRepeat -int 8
+defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 2
