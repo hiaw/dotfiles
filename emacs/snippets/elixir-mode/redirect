@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: redirect
+# key: redirect
+# --
+redirect(to: $0)
