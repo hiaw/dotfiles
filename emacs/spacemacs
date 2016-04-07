@@ -77,7 +77,7 @@ values."
      emoji
      dash
      (geolocation :variables
-                  geolocation-enable-osx-location-service-support t
+                  ;; geolocation-enable-osx-location-service-support t
                   geolocation-enable-weather-forecast t
                   geolocation-enable-automatic-theme-changer nil)
 
