@@ -417,7 +417,7 @@ you should place you code here."
 
 
   ;; Helm Dash config
-  (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
+  ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
   (setq helm-dash-common-docsets '("Elixir" "Javascript"))
   )
 
