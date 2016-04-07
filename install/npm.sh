@@ -15,7 +15,10 @@ packages=(
     cordova
     eslint
     eslint-config-airbnb
+    eslint-config-standard
+    eslint-plugin-promise
     eslint-plugin-react
+    eslint-plugin-standard
     grunt
     gulp
     hexo-cli

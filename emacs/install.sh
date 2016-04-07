@@ -1,5 +1,11 @@
+# Remove typical problem file when upgrading spacemacs
+rm ~/.emacs.d/recentf
+rm -rf ~/.emacs.d/speed-type/
+rm ~/.emacs.d/srecode-map.el
+
+
 # Install spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 
 # Install correct files for speed-type for emacs

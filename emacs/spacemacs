@@ -395,7 +395,7 @@ you should place you code here."
 
 
   ;; Turn on zone after idle of 2 minutes
-  (setq zone-timer (run-with-idle-timer 120 t 'zone))
+  ;; (setq zone-timer (run-with-idle-timer 120 t 'zone))
 
   ;; Function for viewing different zones
   ;; (defun zone-choose (pgm)
