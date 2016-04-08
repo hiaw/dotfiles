@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Elixir form for
+# key: form
+# --
+<%= form_for @conn, ${1:session}_path(@conn, :${2:create}), fn f -> %>
