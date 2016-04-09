@@ -29,6 +29,7 @@ apps=(
     handbrake
     iterm2
     kodi
+    pgadmin3
     postgres
     rescuetime
     skype
@@ -37,7 +38,6 @@ apps=(
     steam
     textmate
     visual-studio-code
-    pgadmin3
 
     # Quick Look Plugins
     betterzipql
