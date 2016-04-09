@@ -419,6 +419,10 @@ you should place you code here."
   ;; Helm Dash config
   ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
   (setq helm-dash-common-docsets '("Elixir" "Javascript"))
+
+  ;; Make sure alchemist can access elixir source code
+  (setq alchemist-goto-elixir-source-dir "/usr/local/sources/elixir")
+  (setq alchemist-goto-erlang-source-dir "/usr/local/sources/erlang")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
