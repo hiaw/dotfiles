@@ -14,6 +14,7 @@ brew install --with-cocoa emacs
 apps=(
     # cli tools
     ack
+    the_silver_searcher
     tree
     wget
     elm

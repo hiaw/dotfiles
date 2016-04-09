@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Elixir link to
+# key: link
+# --
+<%= link "${1:Log}", to: ${2:user}_path(@conn, :${3:new}) %>
