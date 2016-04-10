@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: test
+# key: test
+# --
+test "${1:requires}", %{${2:conn}: $2} do
+  $0
+end
