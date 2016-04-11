@@ -424,6 +424,10 @@ you should place you code here."
   ;; Set default for ranger
   (setq ranger-override-dired t)
   (setq ranger-show-literal nil)
+
+  ;; Set google translate default languages
+  (setq google-translate-default-source-language "en")
+  (setq google-translate-default-target-language "zh")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
