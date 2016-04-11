@@ -18,6 +18,7 @@ apps=(
     tree
     wget
     elm
+    python
     # development tools
     git
     markdown

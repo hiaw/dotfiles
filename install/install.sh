@@ -16,3 +16,7 @@ ln -svf ~/.dotfiles/install/private.xml ~/Library/Application\ Support/Karabiner
 # Clone Elixir source so we have access to documentation in emacs
 git clone https://github.com/elixir-lang/elixir.git /usr/local/sources/elixir
 git clone https://github.com/erlang/otp.git /usr/local/sources/erlang
+
+# Pip
+pip install --upgrade pip
+sudo pip install wakatime
