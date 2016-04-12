@@ -17,7 +17,6 @@ apps=(
     the_silver_searcher
     tree
     wget
-    elm
     python
     # development tools
     git

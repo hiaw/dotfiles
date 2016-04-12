@@ -13,6 +13,8 @@ packages=(
     bower
     brunch
     cordova
+    elm
+    elm-live
     elm-oracle
     eslint
     eslint-config-airbnb
