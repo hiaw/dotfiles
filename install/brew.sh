@@ -3,13 +3,14 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/versions
 brew tap homebrew/dupes
+brew tap homebrew/devel-only
 brew tap Goles/battery
 brew update
 brew upgrade
-
 # Install packages
 
 brew install --with-cocoa emacs
+brew install --devel elm-format
 
 apps=(
     # cli tools

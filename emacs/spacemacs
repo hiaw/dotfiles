@@ -25,16 +25,18 @@ values."
      html
      javascript
      markdown
-     react
+     ;; react
 
      ;; Other Languages
      elixir
      erlang
      python
-     ruby
+     ;; ruby
      yaml
-     typescript
+     ;; typescript
      elm
+     shell-scripts
+     emacs-lisp
 
      ;; Standard tools
      git
@@ -42,8 +44,7 @@ values."
               auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets")
      syntax-checking
      spell-checking
-     spotify
-     shell-scripts
+     ;; spotify
      (shell :variables
             shell-default-shell 'eshell
             ;; shell-default-term-shell "/bin/zsh"
@@ -61,16 +62,15 @@ values."
      games
      xkcd
      speed-reading
-     command-log
+     ;; command-log
      semantic
      colors
 
      ;; Others
-     emacs-lisp
-     gtags
-     search-engine
+     ;; gtags
+     ;; search-engine
      restclient
-     finance
+     ;; finance
      emoji
      dash
      (geolocation :variables
@@ -85,13 +85,13 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     react-snippets
+     ;; react-snippets
      ob-translate
      elm-yasnippets
      hexo
      ;; blog-admin
      omni-quotes
-     helm-itunes
+     ;; helm-itunes
      ;; zone-rainbow
      ;; zone-sl
      speed-type
