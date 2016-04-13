@@ -14,8 +14,10 @@ packages=(
     brunch
     cordova
     elm
+    elm-css
     elm-live
     elm-oracle
+    elm-test
     eslint
     eslint-config-airbnb
     eslint-config-standard

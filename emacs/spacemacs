@@ -41,7 +41,8 @@ values."
      ;; Standard tools
      git
      (auto-completion :variables
-              auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets")
+                      auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets"
+                      auto-completion-enable-help-tooltip t)
      syntax-checking
      spell-checking
      ;; spotify
@@ -97,7 +98,9 @@ values."
      speed-type
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(evil-escape)
+   dotspacemacs-excluded-packages '(evil-escape
+                                    ;; company
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -310,7 +313,7 @@ you should place you code here."
 
   ;; (turn-on-fci-mode)
 
-  evil-shift-round nil
+  ;; evil-shift-round nil
 
   (setq vc-follow-symlinks t)
 
@@ -428,6 +431,14 @@ you should place you code here."
   ;; Set google translate default languages
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "zh")
+
+  ;; elm-format
+  (setq elm-format-on-save t)
+  ;; (add-to-list 'company-backends 'company-elm)
+  ;; (add-hook 'after-init-hook 'global-company-mode)
+  ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
+  (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
+  (add-to-list 'dash-at-point-mode-alist '(elm-mode . "elm"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
