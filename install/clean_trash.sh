@@ -1,12 +1,17 @@
-rm -rf ~/.Trash/*.pkg
 rm -rf ~/.Trash/*.app
-rm -rf ~/.Trash/*.apk
-rm -rf ~/.Trash/*.ipa
 rm -rf ~/.Trash/*.docset
+rm -rf ~/.Trash/*.download
+rm -rf ~/.Trash/*.safariextz
+rm ~/.Trash/*.pkg
+rm ~/.Trash/*.mpkg
 
-rm -rf ~/.Trash/*.tar
-rm -rf ~/.Trash/*.zip
-rm -rf ~/.Trash/*.bz2
-rm -rf ~/.Trash/*.gz
+rm ~/.Trash/*.apk
+rm ~/.Trash/*.ipa
 
-rm -rf ~/.Trash/*.torrent
+rm ~/.Trash/*.tar
+rm ~/.Trash/*.zip
+rm ~/.Trash/*.bz2
+rm ~/.Trash/*.gz
+
+rm ~/.Trash/*.torrent
+rm ~/.Trash/*.air
