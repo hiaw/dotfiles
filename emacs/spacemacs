@@ -419,6 +419,7 @@ you should place you code here."
   ;; Helm Dash config
   ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
   (setq helm-dash-common-docsets '("Elixir" "Javascript"))
+  (add-to-list 'dash-at-point-mode-alist '(elm-mode . "elm"))
 
   ;; Make sure alchemist can access elixir source code
   (setq alchemist-goto-elixir-source-dir "/usr/local/sources/elixir")
@@ -434,11 +435,10 @@ you should place you code here."
 
   ;; elm-format
   (setq elm-format-on-save t)
-  ;; (add-to-list 'company-backends 'company-elm)
-  ;; (add-hook 'after-init-hook 'global-company-mode)
+  (add-to-list 'company-backends 'company-elm)
+  (add-hook 'after-init-hook 'global-company-mode)
   ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
-  (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
-  (add-to-list 'dash-at-point-mode-alist '(elm-mode . "elm"))
+  ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
