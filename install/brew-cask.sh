@@ -3,6 +3,7 @@
 brew tap caskroom/cask
 brew install brew-cask
 brew tap caskroom/versions
+brew cask update
 
 # Install packages
 
@@ -29,6 +30,7 @@ apps=(
     handbrake
     iterm2
     kodi
+    mactex
     pgadmin3
     postgres
     rescuetime
