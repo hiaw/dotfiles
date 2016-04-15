@@ -376,6 +376,11 @@ you should place you code here."
           ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
            "* %?\nEntered on %U\n %i\n %a")))
 
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((sh . t)
+     (python . t)))
+
   ;; ;; turn on soft wrapping mode for org mode
   ;; (add-hook 'org-mode-hook (lambda ()
   ;;                            (setq truncate-lines nil)))
@@ -426,7 +431,6 @@ you should place you code here."
   (setq alchemist-goto-erlang-source-dir "/usr/local/sources/erlang")
 
   ;; Set default for ranger
-  (setq ranger-override-dired t)
   (setq ranger-show-literal nil)
 
   ;; Set google translate default languages
@@ -439,6 +443,8 @@ you should place you code here."
   (add-hook 'after-init-hook 'global-company-mode)
   ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
   ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
+
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
