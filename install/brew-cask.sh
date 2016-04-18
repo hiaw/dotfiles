@@ -37,6 +37,7 @@ apps=(
     skype
     sourcetree
     spotify
+    sqlitebrowser
     steam
     textmate
     visual-studio-code
