@@ -75,3 +75,7 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 export PATH=/Library/TeX/texbin:$PATH
+
+export PATH=/Users/danielchong/Library/Android/sdk/build-tools/23.0.1:$PATH
+
+export PATH=/Users/danielchong/Library/Android/sdk/tools:$PATH
