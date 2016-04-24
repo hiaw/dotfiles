@@ -32,6 +32,7 @@ packages=(
     ios-deploy
     ios-sim
     js-beautify
+    react-native-cli
     tern
     typings
 )

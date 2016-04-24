@@ -45,6 +45,9 @@ typeset -gU cdpath fpath mailpath path
 path=(
   ${ZDOTDIR:-$HOME}/.node/bin
   /usr/local/{bin,sbin}
+  /Library/TeX/texbin
+  /Users/danielchong/Library/Android/sdk/build-tools/23.0.1
+  /Users/danielchong/Library/Android/sdk/tools
   $path
 )
 
@@ -74,8 +77,6 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-export PATH=/Library/TeX/texbin:$PATH
 
-export PATH=/Users/danielchong/Library/Android/sdk/build-tools/23.0.1:$PATH
-
-export PATH=/Users/danielchong/Library/Android/sdk/tools:$PATH
+export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
+export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"

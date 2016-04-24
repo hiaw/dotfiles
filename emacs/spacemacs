@@ -42,6 +42,7 @@ values."
      git
      (auto-completion :variables
                       auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets"
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
      syntax-checking
      spell-checking
@@ -87,6 +88,7 @@ values."
    dotspacemacs-additional-packages
    '(
      ;; react-snippets
+     ggtags
      ob-translate
      elm-yasnippets
      hexo
@@ -442,9 +444,14 @@ you should place you code here."
   (add-to-list 'company-backends 'company-elm)
   (add-hook 'after-init-hook 'global-company-mode)
   ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
-  ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
+  (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
 
+  (menu-bar-mode 1)
 
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+                (ggtags-mode 1))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

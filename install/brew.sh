@@ -5,6 +5,7 @@ brew tap homebrew/versions
 brew tap homebrew/dupes
 brew tap homebrew/devel-only
 brew tap Goles/battery
+brew tap facebook/fb
 brew update
 brew upgrade
 # Install packages
@@ -15,6 +16,9 @@ brew install --devel elm-format
 apps=(
     # cli tools
     ack
+    buck
+    watchman
+    flow
     the_silver_searcher
     tree
     wget
