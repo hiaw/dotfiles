@@ -25,7 +25,7 @@ values."
      html
      javascript
      markdown
-     ;; react
+     react
 
      ;; Other Languages
      elixir
@@ -33,7 +33,7 @@ values."
      python
      ;; ruby
      yaml
-     ;; typescript
+     typescript
      elm
      shell-scripts
      emacs-lisp
@@ -427,6 +427,7 @@ you should place you code here."
   ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
   (setq helm-dash-common-docsets '("Elixir" "Javascript"))
   (add-to-list 'dash-at-point-mode-alist '(elm-mode . "elm"))
+  (add-hook 'elm-mode-hook #'turn-off-elm-indent)
 
   ;; Make sure alchemist can access elixir source code
   (setq alchemist-goto-elixir-source-dir "/usr/local/sources/elixir")
