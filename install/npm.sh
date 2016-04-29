@@ -33,8 +33,10 @@ packages=(
     ios-sim
     js-beautify
     react-native-cli
+    rnpm
     tern
     typings
+    xcode
 )
 
 npm install -g "${packages[@]}"
