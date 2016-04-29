@@ -9,6 +9,7 @@ nvm alias default 5
 # Globally install with npm
 
 packages=(
+    babel
     babel-eslint
     bower
     brunch
@@ -36,6 +37,8 @@ packages=(
     rnpm
     tern
     typings
+    webpack
+    webpack-dev-server
     xcode
 )
 
