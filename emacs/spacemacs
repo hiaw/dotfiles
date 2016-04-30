@@ -87,7 +87,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     ;; react-snippets
+     react-snippets
      ggtags
      ob-translate
      elm-yasnippets
@@ -387,6 +387,7 @@ you should place you code here."
   ;; (add-hook 'org-mode-hook (lambda ()
   ;;                            (setq truncate-lines nil)))
 
+  (add-hook 'react-mode-hook 'emmet-mode)
 
   ;; CMD-/ keyboard shortcut for commenting
   (global-set-key (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)

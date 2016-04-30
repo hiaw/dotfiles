@@ -9,7 +9,7 @@ nvm alias default 5
 # Globally install with npm
 
 packages=(
-    babel
+    babel-cli
     babel-eslint
     bower
     brunch
