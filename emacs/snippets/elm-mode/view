@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: view
+# key: view
+# --
+${1:view} : Signal.Address Action -> $2Model -> Html.Html
+$1 address model =
+  $3

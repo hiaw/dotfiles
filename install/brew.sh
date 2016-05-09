@@ -23,6 +23,7 @@ apps=(
     tree
     wget
     python
+    trace2html
     # development tools
     git
     markdown

@@ -4,8 +4,7 @@ set incsearch hlsearch
 set ignorecase smartcase
 set visualbell
 set showmode
-set surround
-
+set gdefault
 
 " =================================================
 " Editor control
@@ -20,6 +19,11 @@ inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 inoremap <C-h> <Left>
+
+
+" always center the search result
+nnoremap n nzz
+nnoremap N Nzz
 
 
 " ================================================

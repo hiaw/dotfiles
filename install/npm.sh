@@ -14,6 +14,7 @@ packages=(
     bower
     brunch
     cordova
+    code-push-cli
     elm
     elm-css
     elm-live
