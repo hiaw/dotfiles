@@ -1,7 +1,5 @@
 # Install Caskroom
 
-brew tap caskroom/cask
-brew install brew-cask
 brew tap caskroom/versions
 brew cask update
 
@@ -10,7 +8,7 @@ brew cask update
 apps=(
     # 1password
     # cleanmymac
-    # dash
+    dash
     # screenflow
     # sketchup
     # slack
@@ -23,23 +21,26 @@ apps=(
     betterzip
     dropbox
     firefox
-    flux
+    # flux
     github-desktop
     google-chrome
     google-drive
     handbrake
     iterm2
+    java
+    karabiner
     kodi
     mactex
     pgadmin3
     postgres
     rescuetime
-    skype
+    # skype
     sourcetree
     spotify
     sqlitebrowser
-    steam
+    # steam
     textmate
+    xiami
     visual-studio-code
 
     # Quick Look Plugins
