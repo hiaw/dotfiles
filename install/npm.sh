@@ -29,6 +29,7 @@ packages=(
     grunt
     gulp
     hexo-cli
+    horizon
     http-server
     ionic
     ios-deploy

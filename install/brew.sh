@@ -27,6 +27,7 @@ apps=(
     # development tools
     git
     markdown
+    rethinkdb
     # Emacs tools
     ispell
     ctags
