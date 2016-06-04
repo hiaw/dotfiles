@@ -28,6 +28,7 @@ apps=(
     git
     markdown
     # Emacs tools
+    npm
     ispell
     ctags
     elixir

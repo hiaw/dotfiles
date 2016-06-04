@@ -23,6 +23,8 @@ packages=(
     eslint
     eslint-config-airbnb
     eslint-config-standard
+    eslint-plugin-jsx-a11y
+    eslint-plugin-import
     eslint-plugin-promise
     eslint-plugin-react
     eslint-plugin-standard
