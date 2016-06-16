@@ -22,6 +22,8 @@ packages=(
     elm-test
     eslint
     eslint-config-airbnb
+    eslint-plugin-jsx-a11y
+    eslint-plugin-import
     eslint-config-standard
     eslint-plugin-promise
     eslint-plugin-react

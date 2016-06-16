@@ -17,6 +17,7 @@ apps=(
     # cli tools
     ack
     buck
+    go
     watchman
     flow
     the_silver_searcher

@@ -48,6 +48,9 @@ path=(
   /Library/TeX/texbin
   /Users/danielchong/Library/Android/sdk/build-tools/23.0.1
   /Users/danielchong/Library/Android/sdk/tools
+  /Users/danielchong/Library/Android/sdk/platform-tools
+  /usr/local/opt/go/libexec/bin
+  /Users/danielchong/Documents/Development/Other/go/bin
   $path
 )
 
@@ -80,3 +83,5 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 
 export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
 export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
+export GOPATH="/Users/danielchong/Documents/Development/Other/go"
+export GOBIN="/Users/danielchong/Documents/Development/Other/go/bin"
