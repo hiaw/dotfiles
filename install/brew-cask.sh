@@ -18,6 +18,7 @@ apps=(
     # vlc
     # webstorm
     a-better-finder-rename
+    atom
     betterzip
     dropbox
     firefox

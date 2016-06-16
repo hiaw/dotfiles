@@ -28,8 +28,8 @@ apps=(
     # development tools
     git
     markdown
-    rethinkdb
     # Emacs tools
+    npm
     ispell
     ctags
     elixir

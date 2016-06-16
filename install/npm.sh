@@ -25,13 +25,14 @@ packages=(
     eslint-plugin-jsx-a11y
     eslint-plugin-import
     eslint-config-standard
+    eslint-plugin-jsx-a11y
+    eslint-plugin-import
     eslint-plugin-promise
     eslint-plugin-react
     eslint-plugin-standard
     grunt
     gulp
     hexo-cli
-    horizon
     http-server
     ionic
     ios-deploy
