@@ -17,6 +17,7 @@ apps=(
     # cli tools
     ack
     buck
+    go
     watchman
     flow
     the_silver_searcher
@@ -27,8 +28,8 @@ apps=(
     # development tools
     git
     markdown
-    rethinkdb
     # Emacs tools
+    npm
     ispell
     ctags
     elixir
