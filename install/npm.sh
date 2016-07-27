@@ -38,6 +38,7 @@ packages=(
     ios-deploy
     ios-sim
     js-beautify
+    mocha
     react-native-cli
     rnpm
     tern
