@@ -21,6 +21,7 @@ apps=(
     atom
     betterzip
     dropbox
+    emacs
     firefox
     # flux
     github-desktop

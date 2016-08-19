@@ -10,7 +10,6 @@ brew update
 brew upgrade
 # Install packages
 
-brew install --with-cocoa emacs
 brew install --devel elm-format
 
 apps=(
@@ -18,6 +17,7 @@ apps=(
     ack
     buck
     go
+    hugo
     watchman
     flow
     the_silver_searcher
