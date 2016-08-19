@@ -101,6 +101,7 @@ values."
      ;; zone-sl
      speed-type
      android-mode
+     ;; jsfmt
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape
@@ -460,6 +461,9 @@ you should place you code here."
             (lambda ()
               (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
                 (ggtags-mode 1))))
+
+  ;; (load "~/.emacs.d/jsfmt")
+  ;; (add-hook 'before-save-hook 'jsfmt-before-save)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

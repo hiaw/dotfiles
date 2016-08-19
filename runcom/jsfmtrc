@@ -1,0 +1,23 @@
+{
+    "plugins": [
+      "esformatter-jsx"
+    ],
+    "jsx": {
+      "formatJSX": true,
+      "attrsOnSameLineAsTag": false,
+      "maxAttrsOnTag": 1,
+      "firstAttributeOnSameLine": true,
+      "formatJSXExpressions": true,
+      "JSXExpressionsSingleLine": true,
+      "alignWithFirstAttribute": true,
+      "Spaceinjsxexpressioncontainers": "",
+      "removeSpaceBeforeClosingJSX": false,
+      "htmlOptions": {
+        "brace_style": "collapse",
+        "indent_char": " ",
+        "indent_size": 2,
+        "max_preserve_newlines": 2,
+        "preserve_newlines": true
+      }
+    }
+}
