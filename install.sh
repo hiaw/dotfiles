@@ -21,7 +21,7 @@ done
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.sh
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/npm.sh
 . "${ZDOTDIR:-$HOME}"/.dotfiles/emacs/install.sh
-# . "${ZDOTDIR:-$HOME}"/.dotfiles/install/pip.sh
+. "${ZDOTDIR:-$HOME}"/.dotfiles/install/pip.sh
 
 if [ "$(uname)" == "Darwin" ]; then
     . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew-cask.sh
