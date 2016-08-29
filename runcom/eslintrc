@@ -8,5 +8,8 @@
   "plugins"     : [
     "react"
   ],
-  "extends": ["eslint:recommended", "plugin:react/recommended"]
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules" : {
+    "semi": [0, "never"]
+  }
 }

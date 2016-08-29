@@ -9,6 +9,7 @@ nvm alias default 5
 # Globally install with npm
 
 packages=(
+    ava
     babel-cli
     babel-eslint
     bower
@@ -23,6 +24,7 @@ packages=(
     eslint
     eslint-config-airbnb
     eslint-plugin-jsx-a11y
+    eslint-plugin-flowtype
     eslint-plugin-import
     eslint-config-standard
     eslint-plugin-jsx-a11y
@@ -39,7 +41,9 @@ packages=(
     ios-sim
     js-beautify
     mocha
+    nyc
     react-native-cli
+    react-native-ignite
     rnpm
     tern
     typings
