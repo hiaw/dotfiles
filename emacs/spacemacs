@@ -29,25 +29,26 @@ values."
 
      ;; Other Languages
      elixir
-     erlang
-     python
+     ;; erlang
+     ;; python
      ;; ruby
-     java
+     ;; java
      yaml
-     typescript
+     ;; typescript
      elm
      shell-scripts
-     emacs-lisp
-     go
+     ;; emacs-lisp
+     ;; go
 
      ;; Standard tools
      git
-     (auto-completion :variables
-                      auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets"
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip t)
+     ;; (auto-completion :variables
+     ;;                  auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets"
+     ;;                  auto-completion-enable-snippets-in-popup t
+     ;;                  auto-completion-enable-help-tooltip t)
+
      syntax-checking
-     spell-checking
+     ;; spell-checking
      ;; spotify
      (shell :variables
             shell-default-shell 'eshell
@@ -63,24 +64,24 @@ values."
      ;;       org-enable-priority-commands t)
      org
      osx
-     games
-     xkcd
+     ;; games
+     ;; xkcd
      speed-reading
      ;; command-log
-     semantic
+     ;; semantic
      colors
 
      ;; Others
      ;; gtags
      ;; search-engine
-     restclient
+     ;; restclient
      ;; finance
      emoji
-     dash
-     (geolocation :variables
-                  ;; geolocation-enable-osx-location-service-support t
-                  geolocation-enable-weather-forecast t
-                  geolocation-enable-automatic-theme-changer nil)
+     ;; dash
+     ;; (geolocation :variables
+     ;;              ;; geolocation-enable-osx-location-service-support t
+     ;;              geolocation-enable-weather-forecast t
+     ;;              geolocation-enable-automatic-theme-changer nil)
 
      )
    ;; List of additional packages that will be installed without being
@@ -90,17 +91,17 @@ values."
    dotspacemacs-additional-packages
    '(
      react-snippets
-     ggtags
-     ob-translate
+     ;; ggtags
+     ;; ob-translate
      elm-yasnippets
-     hexo
+     ;; hexo
      ;; blog-admin
-     omni-quotes
+     ;; omni-quotes
      ;; helm-itunes
      ;; zone-rainbow
      ;; zone-sl
      speed-type
-     android-mode
+     ;; android-mode
      ;; jsfmt
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -396,7 +397,7 @@ you should place you code here."
   ;; (add-hook 'org-mode-hook (lambda ()
   ;;                            (setq truncate-lines nil)))
 
-  (add-hook 'react-mode-hook 'emmet-mode)
+  ;; (add-hook 'react-mode-hook 'emmet-mode)
 
   ;; CMD-/ keyboard shortcut for commenting
   (global-set-key (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)
@@ -427,17 +428,17 @@ you should place you code here."
 
 
   ;; Sunshine setting to see weather forecast
-  (setq sunshine-appid "4eb08157eec81b0707967b44615ba794")
-  (setq sunshine-location "Christchurch, New Zealand")
-  (setq sunshine-show-icons t)
-  (setq sunshine-units 'metric)
+  ;; (setq sunshine-appid "4eb08157eec81b0707967b44615ba794")
+  ;; (setq sunshine-location "Christchurch, New Zealand")
+  ;; (setq sunshine-show-icons t)
+  ;; (setq sunshine-units 'metric)
 
 
   ;; Helm Dash config
   ;; (setq helm-dash-docsets-path (format "%s/Library/Application Support/Dash/DocSets" (getenv "HOME")))
-  (setq helm-dash-common-docsets '("Elixir" "Javascript"))
-  (add-to-list 'dash-at-point-mode-alist '(elm-mode . "elm"))
-  (add-hook 'elm-mode-hook #'turn-off-elm-indent)
+  ;; (setq helm-dash-common-docsets '("Elixir" "Javascript"))
+  ;; (add-to-list 'dash-at-point-mode-alist '(elm-mode . "elm"))
+  ;; (add-hook 'elm-mode-hook #'turn-off-elm-indent)
 
   ;; Make sure alchemist can access elixir source code
   (setq alchemist-goto-elixir-source-dir "/usr/local/sources/elixir")
@@ -459,10 +460,10 @@ you should place you code here."
 
   (menu-bar-mode 1)
 
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-                (ggtags-mode 1))))
+  ;; (add-hook 'c-mode-common-hook
+  ;;           (lambda ()
+  ;;             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+  ;;               (ggtags-mode 1))))
 
   ;; (load "~/.emacs.d/jsfmt")
   ;; (add-hook 'before-save-hook 'jsfmt-before-save)
@@ -483,6 +484,7 @@ you should place you code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(paradox-github-token t)
- '(wakatime-api-key "f4df4f2c-c48a-4c85-a30b-ef10ccc01755")
- '(wakatime-cli-path "/usr/local/bin/wakatime"))
+ ;; '(paradox-github-token t)
+ ;; '(wakatime-api-key "f4df4f2c-c48a-4c85-a30b-ef10ccc01755")
+ ;; '(wakatime-cli-path "/usr/local/bin/wakatime")
+ )
