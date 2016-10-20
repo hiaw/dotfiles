@@ -42,6 +42,10 @@ values."
 
      ;; Standard tools
      git
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence-delay 0.1)
      ;; (auto-completion :variables
      ;;                  auto-completion-private-snippets-directory "~/.dotfiles/emacs/snippets"
      ;;                  auto-completion-enable-snippets-in-popup t
@@ -453,7 +457,7 @@ you should place you code here."
 
   ;; elm-format
   (setq elm-format-on-save t)
-  (add-to-list 'company-backends 'company-elm)
+  ;; (add-to-list 'company-backends 'company-elm)
   (add-hook 'after-init-hook 'global-company-mode)
   ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
   (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
