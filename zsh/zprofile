@@ -43,7 +43,6 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/Cellar/node/7.0.0/bin
   ${ZDOTDIR:-$HOME}/.node/bin
   /usr/local/{bin,sbin}
   /Library/TeX/texbin

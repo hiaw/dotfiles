@@ -15,6 +15,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     octave
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -278,7 +279,7 @@ values."
    dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -468,10 +469,6 @@ you should place you code here."
   ;;           (lambda ()
   ;;             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
   ;;               (ggtags-mode 1))))
-
-  ;; (load "~/.emacs.d/jsfmt")
-  ;; (add-hook 'before-save-hook 'jsfmt-before-save)
-  ;; (add-hook 'before-save-hook 'jsfmt-before-save)
 
   (defun standard-format()
     "Format js to standard"
