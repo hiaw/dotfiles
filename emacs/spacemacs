@@ -75,6 +75,7 @@ values."
      ;; command-log
      ;; semantic
      colors
+     better-defaults
 
      ;; Others
      ;; gtags
@@ -279,7 +280,7 @@ values."
    dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode t
+   dotspacemacs-smartparens-strict-mode nil
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -485,7 +486,10 @@ you should place you code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(paradox-github-token t)
- ;; '(wakatime-api-key "f4df4f2c-c48a-4c85-a30b-ef10ccc01755")
- ;; '(wakatime-cli-path "/usr/local/bin/wakatime")
+ '(magit-diff-section-arguments (quote ("--ignore-all-space" "--no-ext-diff"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
