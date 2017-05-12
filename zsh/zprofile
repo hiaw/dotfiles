@@ -44,6 +44,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   ${ZDOTDIR:-$HOME}/.node/bin
+  ${ZDOTDIR:-$HOME}/.fastlane/bin
   /usr/local/{bin,sbin}
   /Library/TeX/texbin
   /Users/danielchong/Library/Android/sdk/build-tools/23.0.1
@@ -85,3 +86,6 @@ export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
 export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
 export GOPATH="/Users/danielchong/Documents/Development/Other/go"
 export GOBIN="/Users/danielchong/Documents/Development/Other/go/bin"
+export JAVA_HOME=`/usr/libexec/java_home`
+
+# alias elm-format='elm-format-0.17'
