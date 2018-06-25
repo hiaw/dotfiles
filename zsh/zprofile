@@ -43,15 +43,17 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  /usr/local/{bin,sbin}
+  /usr/local/opt/go/libexec/bin
+  /Library/TeX/texbin
   ${ZDOTDIR:-$HOME}/.node/bin
   ${ZDOTDIR:-$HOME}/.fastlane/bin
-  /usr/local/{bin,sbin}
-  /Library/TeX/texbin
-  /Users/danielchong/Library/Android/sdk/build-tools/23.0.1
-  /Users/danielchong/Library/Android/sdk/tools
-  /Users/danielchong/Library/Android/sdk/platform-tools
-  /usr/local/opt/go/libexec/bin
-  /Users/danielchong/Documents/Development/Other/go/bin
+  ${ZDOTDIR:-$HOME}/Library/Android/sdk/build-tools/23.0.1
+  ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools
+  ${ZDOTDIR:-$HOME}/Library/Android/sdk/platform-tools
+  ${ZDOTDIR:-$HOME}/Documents/Development/Other/go/bin
+  ${ZDOTDIR:-$HOME}/Downloads/google-cloud-sdk/bin
+  ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/bin
   $path
 )
 
@@ -86,6 +88,8 @@ export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
 export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
 export GOPATH="/Users/danielchong/Documents/Development/Other/go"
 export GOBIN="/Users/danielchong/Documents/Development/Other/go/bin"
-export JAVA_HOME=`/usr/libexec/java_home`
-
+export JAVA_HOME="/usr/libexec/java_home"
 # alias elm-format='elm-format-0.17'
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
