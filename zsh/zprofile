@@ -84,6 +84,13 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 
+export UNITY_5_4_2f1_PATH="/Applications/Unity_Hub/Hub/Editor/5.4.2f1/Unity.app/Contents/MacOS"
+export UNITY_5_6_3p1_PATH="/Applications/Unity_Hub/Hub/Editor/5.6.3p1/Unity.app/Contents/MacOS"
+export UNITY_2017_2_0f1_PATH="/Applications/Unity_Hub/Hub/Editor/2017.2.0f1/Unity.app/Contents/MacOS"
+export UNITY_2018_1_1f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.1.1f1/Unity.app/Contents/MacOS"
+export UNITY_2018_2_1f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.2.1f1/Unity.app/Contents/MacOS"
+export UNITY_2018_2_5f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.2.5f1/Unity.app/Contents/MacOS"
+
 export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
 export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
 export GOPATH="/Users/danielchong/Documents/Development/Other/go"

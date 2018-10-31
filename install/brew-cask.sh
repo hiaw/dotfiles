@@ -8,7 +8,7 @@ brew cask update
 apps=(
     # 1password
     # cleanmymac
-    dash
+    # dash
     # screenflow
     # sketchup
     # slack
@@ -17,45 +17,45 @@ apps=(
     # tunnelbear
     # vlc
     # webstorm
-    a-better-finder-rename
-    atom
-    betterzip
-    dropbox
-    emacs
-    firefox
+    # a-better-finder-rename
+    # atom
+    # betterzip
+    # dropbox
+    # emacs
+    # firefox
     # flux
-    github-desktop
-    google-chrome
-    google-drive
-    handbrake
-    iterm2
-    java
-    karabiner
-    kodi
-    mactex
-    pgadmin3
-    postgres
-    rescuetime
+    # github-desktop
+    # google-chrome
+    # google-drive
+    # handbrake
+    # iterm2
+    # java
+    # karabiner
+    # kodi
+    # mactex
+    # pgadmin3
+    # postgres
+    # rescuetime
     # skype
-    sourcetree
-    spotify
-    sqlitebrowser
+    # sourcetree
+    # spotify
+    # sqlitebrowser
     # steam
-    textmate
-    xiami
-    visual-studio-code
+    # textmate
+    # xiami
+    # visual-studio-code
 
     # Quick Look Plugins
     betterzipql
-    qlcolorcode
-    qlimagesize
-    qlmarkdown
-    qlprettypatch
-    qlstephen
-    quicklook-csv
-    quicklook-json
-    suspicious-package
-    webpquicklook
+    # qlcolorcode
+    # qlimagesize
+    # qlmarkdown
+    # qlprettypatch
+    # qlstephen
+    # quicklook-csv
+    # quicklook-json
+    # suspicious-package
+    # webpquicklook
 )
 
 brew cask install --appdir="/Applications" "${apps[@]}"
