@@ -24,3 +24,21 @@ rm -rf ~/.Trash/*.safariextz
 # downloaded junk
 rm ~/.Trash/*.torrent
 rm -rf ~/.Trash/*.download
+rm -rf ~/.Trash/*.nzb
+rm -rf ~/.Trash/*.appdownload
+
+# CSS
+rm -rf ~/.Trash/*.css
+rm -rf ~/.Trash/*.scss
+
+# Fonts
+rm -rf ~/.Trash/*.ttf
+rm -rf ~/.Trash/*.eot
+rm -rf ~/.Trash/*.woff
+
+rm -rf ~/.Trash/*.exe
+rm -rf ~/.Trash/*.plist
+rm -rf ~/.Trash/*.db
+rm -rf ~/.Trash/*.db-journal
+rm -rf ~/.Trash/*.mobileprovision
+rm -rf ~/.Trash/*.lock
