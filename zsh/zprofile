@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='emacs'
-export VISUAL='emacs'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -47,6 +47,7 @@ path=(
   /usr/local/opt/go/libexec/bin
   /Library/TeX/texbin
   ${ZDOTDIR:-$HOME}/.node/bin
+  ${ZDOTDIR:-$HOME}/.rbenv/bin
   ${ZDOTDIR:-$HOME}/.fastlane/bin
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/build-tools/23.0.1
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools
@@ -54,6 +55,7 @@ path=(
   ${ZDOTDIR:-$HOME}/Documents/Development/Other/go/bin
   ${ZDOTDIR:-$HOME}/Downloads/google-cloud-sdk/bin
   ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/bin
+  ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/.pub-cache/bin
   $path
 )
 
@@ -84,12 +86,7 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 
-export UNITY_5_4_2f1_PATH="/Applications/Unity_Hub/Hub/Editor/5.4.2f1/Unity.app/Contents/MacOS"
 export UNITY_5_6_3p1_PATH="/Applications/Unity_Hub/Hub/Editor/5.6.3p1/Unity.app/Contents/MacOS"
-export UNITY_2017_2_0f1_PATH="/Applications/Unity_Hub/Hub/Editor/2017.2.0f1/Unity.app/Contents/MacOS"
-export UNITY_2018_1_1f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.1.1f1/Unity.app/Contents/MacOS"
-export UNITY_2018_2_1f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.2.1f1/Unity.app/Contents/MacOS"
-export UNITY_2018_2_5f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.2.5f1/Unity.app/Contents/MacOS"
 
 export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
 export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
@@ -100,3 +97,5 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(rbenv init -)"
