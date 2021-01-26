@@ -11,7 +11,7 @@ set gdefault
 " =================================================
 
 " Reload .ideavimrc
-nnoremap <Space>vs :source ~/.ideavimrc<CR>
+" nnoremap <Space>vs :source ~/.ideavimrc<CR>
 
 
 " Insert mode
@@ -29,14 +29,17 @@ nnoremap N Nzz
 " ================================================
 " IDE actions
 " ================================================
-nnoremap <Space>o :action GotoClass<CR>
-nnoremap <Space>O :action GotoFile<CR>
-nnoremap <Space>d :action CloseContent<CR>
-nnoremap <Space>j :action RecentFiles<CR>
-nnoremap <Space>k :action FileStructurePopup<CR>
-nnoremap <Space>h :action QuickJavaDoc<CR>
+" nnoremap <Space>o :action GotoClass<CR>
+" nnoremap <Space>O :action GotoFile<CR>
+" nnoremap <Space>d :action CloseContent<CR>
+" nnoremap <Space>j :action RecentFiles<CR>
+" nnoremap <Space>k :action FileStructurePopup<CR>
+" nnoremap <Space>h :action QuickJavaDoc<CR>
 
 " Split windows
-nnoremap <Space>w\ :action SplitVertically<CR>
-nnoremap <Space>wv :action SplitVertically<CR>
-nnoremap <Space>w- :action SplitHorizontally<CR>
+" nnoremap <Space>w\ :action SplitVertically<CR>
+" nnoremap <Space>wv :action SplitVertically<CR>
+" nnoremap <Space>w- :action SplitHorizontally<CR>
+
+" KJump
+nmap <Space> :action KJumpAction.Word0<CR>

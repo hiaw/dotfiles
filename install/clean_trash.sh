@@ -6,6 +6,7 @@ rm ~/.Trash/*.mpkg
 
 # development junk
 rm ~/.Trash/*.apk
+rm ~/.Trash/*.aab
 rm ~/.Trash/*.ipa
 
 # compressed Junk
