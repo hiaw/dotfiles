@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Elixir input
-# key: input
-# --
-<%= ${1:text}_input f, :${2:user}, placeholder: "${3:User}", class: "$4" %>

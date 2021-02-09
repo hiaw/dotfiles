@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: validate_length
-# key: vl
-# --
-validate_length(:${1:username}, ${2:min: ${3:1}}, ${4:max: ${5:10}}, ${6:is: ${7:2}})

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: Phoenix use model
-# key: um
-# --
-use ${1:Hello}.Web, :model
-
-$0

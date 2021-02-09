@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: Phoenix fn
-# key: fn
-# --
-fn ${1:conn} ->
-  $0
-end

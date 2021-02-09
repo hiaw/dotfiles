@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: put flash
-# key: flash
-# --
-put_flash(:${1:info}, "${2:#{${3:user.name}}} $0")

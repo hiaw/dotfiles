@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Elixir template bracket
-# key: eh
-# --
-<%${1:=} $2 %>$0

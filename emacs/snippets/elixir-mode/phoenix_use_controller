@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: Phoenix use controller
-# key: uc
-# --
-use ${1:Hello}.Web, :controller
-
-$0

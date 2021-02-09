@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: path
-# key: path
-# --
-${1:page}_path(conn, :${2:index})

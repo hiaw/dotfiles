@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Ecto create index
-# key: createi
-# --
-create index(:${1:users}, [:${2:username}]${3:, ${4:$$(yas-choose-value '("name" "unique" "concurrently" "using" "prefix"))}: :${5:city}}
