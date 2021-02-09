@@ -50,6 +50,7 @@ path=(
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/platform-tools
   ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/bin
+  ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/.pub-cache/bin
   $path
 )
 
