@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='emacs'
-export VISUAL='emacs'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -44,33 +44,14 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  /usr/local/opt/go/libexec/bin
-  /Library/TeX/texbin
+  /usr/local/opt/python/libexec/bin
   ${ZDOTDIR:-$HOME}/.node/bin
   ${ZDOTDIR:-$HOME}/.fastlane/bin
-  ${ZDOTDIR:-$HOME}/Library/Android/sdk/build-tools/23.0.1
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/platform-tools
-  ${ZDOTDIR:-$HOME}/Documents/Development/Other/go/bin
-  ${ZDOTDIR:-$HOME}/Downloads/google-cloud-sdk/bin
   ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/bin
   $path
 )
-
-#
-# Less
-#
-
-# Set the default Less options.
-# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
-# Remove -X and -F (exit if the content fits on one screen) to enable it.
-export LESS='-F -g -i -M -R -S -w -X -z-4'
-
-# Set the Less input preprocessor.
-# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
 
 #
 # Temporary Files
@@ -83,20 +64,6 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-
-export UNITY_5_4_2f1_PATH="/Applications/Unity_Hub/Hub/Editor/5.4.2f1/Unity.app/Contents/MacOS"
-export UNITY_5_6_3p1_PATH="/Applications/Unity_Hub/Hub/Editor/5.6.3p1/Unity.app/Contents/MacOS"
-export UNITY_2017_2_0f1_PATH="/Applications/Unity_Hub/Hub/Editor/2017.2.0f1/Unity.app/Contents/MacOS"
-export UNITY_2018_1_1f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.1.1f1/Unity.app/Contents/MacOS"
-export UNITY_2018_2_1f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.2.1f1/Unity.app/Contents/MacOS"
-export UNITY_2018_2_5f1_PATH="/Applications/Unity_Hub/Hub/Editor/2018.2.5f1/Unity.app/Contents/MacOS"
-
 export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
 export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
-export GOPATH="/Users/danielchong/Documents/Development/Other/go"
-export GOBIN="/Users/danielchong/Documents/Development/Other/go/bin"
 export JAVA_HOME=$(/usr/libexec/java_home)
-# alias elm-format='elm-format-0.17'
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
