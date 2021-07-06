@@ -33,6 +33,8 @@ fi
 # Paths
 #
 
+export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -44,13 +46,12 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  /usr/local/opt/python/libexec/bin
-  ${ZDOTDIR:-$HOME}/.node/bin
+  ${ZDOTDIR:-$HOME}/.amplify/bin
   ${ZDOTDIR:-$HOME}/.fastlane/bin
+  ${ZDOTDIR:-$HOME}/Library/Android/sdk/emulator
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools
+  ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools/bin
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/platform-tools
-  ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/bin
-  ${ZDOTDIR:-$HOME}/Documents/Development/Mobile/Flutter/flutter/.pub-cache/bin
   $path
 )
 
@@ -64,7 +65,3 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
-export ANDROID_NDK="/Users/danielchong/Library/Android/android-ndk-r10e"
-export JAVA_HOME=$(/usr/libexec/java_home)
