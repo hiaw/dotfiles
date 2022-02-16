@@ -52,6 +52,7 @@ path=(
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/tools/bin
   ${ZDOTDIR:-$HOME}/Library/Android/sdk/platform-tools
+  ${ZDOTDIR:-$HOME}/go/bin
   $path
 )
 
@@ -65,3 +66,7 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export AWS_SDK_LOAD_CONFIG=1
