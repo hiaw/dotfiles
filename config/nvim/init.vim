@@ -16,6 +16,10 @@ syntax on
 " set spell " enable spell check (may need to download language package)
 set ttyfast " Speed up scrolling in Vim
 
+set ignorecase
+set smartcase
+
+
 if exists('g:vscode')
 	xmap gc  <Plug>VSCodeCommentary
 	nmap gc  <Plug>VSCodeCommentary
@@ -40,8 +44,8 @@ if exists('g:vscode')
 
 	xnoremap <silent> zV <Cmd>call VSCodeNotify('editor.foldAllExcept')<CR>
 
-	nnoremap <silent> <Space> <Cmd>call VSCodeNotify('whichkey.show')<CR>
-	xnoremap <silent> <Space> <Cmd>call VSCodeNotify('whichkey.show')<CR>
+	nnoremap <silent> s <Cmd>call VSCodeNotify('whichkey.show')<CR>
+	xnoremap <silent> s <Cmd>call VSCodeNotify('whichkey.show')<CR>
 endif
 
 " Plugins here
@@ -50,8 +54,8 @@ Plug 'phaazon/hop.nvim'
 call plug#end()
 
 " Hop
-map s <Cmd>HopChar1<CR>
-omap s v<Cmd>HopChar1<CR>
+map <Space> <Cmd>HopWord<CR>
+" omap s v<Cmd>HopWord<CR>
 
 lua << EOF
 require'hop'.setup()
