@@ -1,52 +1,24 @@
 # Install Caskroom
 
-brew tap caskroom/versions
-brew cask update
+# brew tap caskroom/versions
+# brew cask update
 
 # Install packages
 
 apps=(
     # 1password
-    # cleanmymac
-    # dash
-    # screenflow
-    # sketchup
     # slack
-    # sublime-text3
-    # transmission
-    # tunnelbear
     # vlc
-    # webstorm
-    # a-better-finder-rename
-    # atom
-    # betterzip
     # dropbox
-    # emacs
     # firefox
-    # flux
-    # github-desktop
     # google-chrome
-    # google-drive
     # handbrake
-    # iterm2
-    # java
-    # karabiner
-    # kodi
-    # mactex
-    # pgadmin3
-    # postgres
-    # rescuetime
-    # skype
     # sourcetree
     # spotify
-    # sqlitebrowser
-    # steam
-    # textmate
-    # xiami
     # visual-studio-code
 
     # Quick Look Plugins
-    betterzipql
+    # betterzipql
     # qlcolorcode
     # qlimagesize
     # qlmarkdown
@@ -58,6 +30,6 @@ apps=(
     # webpquicklook
 )
 
-brew cask install --appdir="/Applications" "${apps[@]}"
+brew install "${apps[@]}"
 
-brew cask cleanup
+brew cleanup
