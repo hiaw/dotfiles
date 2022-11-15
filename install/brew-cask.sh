@@ -6,16 +6,25 @@
 # Install packages
 
 apps=(
+
+# general
     # 1password
-    # slack
-    # vlc
+    setapp
+    slack
+    vlc
     # dropbox
-    # firefox
-    # google-chrome
+    lastpass
+    firefox
+    google-chrome
     # handbrake
-    # sourcetree
-    # spotify
-    # visual-studio-code
+    spotify
+    rectangle
+
+    # Development
+    sourcetree
+    visual-studio-code
+    flipper
+    android-studio
 
     # Quick Look Plugins
     # betterzipql
@@ -30,6 +39,6 @@ apps=(
     # webpquicklook
 )
 
-brew install "${apps[@]}"
+brew install --cask "${apps[@]}"
 
 brew cleanup
