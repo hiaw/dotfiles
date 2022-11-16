@@ -23,8 +23,5 @@ ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/nvim/init.vim "${ZDOTDIR:-$HOME}"/.co
 # Package managers & packages
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/install.sh
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.sh
-# . "${ZDOTDIR:-$HOME}"/.dotfiles/install/npm.sh
-# . "${ZDOTDIR:-$HOME}"/.dotfiles/emacs/install.sh
-# . "${ZDOTDIR:-$HOME}"/.dotfiles/install/pip.sh
 
 brew bundle install --file "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.Brewfile

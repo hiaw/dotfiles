@@ -1,9 +1,7 @@
 ## cli tools
 # brew "ack"
-# brew "go"
 # brew "the_silver_searcher"
 # brew "tree"
-# brew "markdown"
 brew "mas"
 brew "watchman"
 brew "wget"
@@ -14,7 +12,6 @@ brew "awscli"
 brew "cocoapods"
 brew "git"
 brew "neovim"
-
 
 ## general
 cask "firefox"
@@ -33,6 +30,7 @@ cask "vlc"
 ## Development"
 cask "android-studio"
 cask "flipper"
+cask "insomnia"
 cask "sourcetree"
 cask "visual-studio-code"
 
