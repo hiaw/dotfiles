@@ -27,6 +27,4 @@ ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/nvim/init.vim "${ZDOTDIR:-$HOME}"/.co
 # . "${ZDOTDIR:-$HOME}"/.dotfiles/emacs/install.sh
 # . "${ZDOTDIR:-$HOME}"/.dotfiles/install/pip.sh
 
-if [[ $(uname) = "Darwin" ]]; then
-    . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew-cask.sh
-fi
+brew bundle install --file "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.Brewfile
