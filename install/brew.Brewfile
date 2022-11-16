@@ -14,6 +14,7 @@ brew "git"
 brew "neovim"
 
 ## general
+cask "discord"
 cask "firefox"
 cask "google-chrome"
 cask "lastpass"
