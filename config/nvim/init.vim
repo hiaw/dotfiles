@@ -51,6 +51,7 @@ endif
 " Plugins here
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'phaazon/hop.nvim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Hop
