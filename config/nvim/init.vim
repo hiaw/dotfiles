@@ -1,30 +1,30 @@
 " Options
 set clipboard=unnamedplus " Enables the clipboard between Vim/Neovim and other applications.
-set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu to behave more like an IDE.
+" set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu to behave more like an IDE.
 " set cursorline " Highlights the current line in the editor
-set hidden " Hide unused buffers
+" set hidden " Hide unused buffers
 " set autoindent " Indent a new line
-set inccommand=split " Show replacements in a split screen
+" set inccommand=split " Show replacements in a split screen
 set mouse=a " Allow to use the mouse in the editor
 " set number " Shows the line numbers
-set splitbelow splitright " Change the split screen behavior
+" set splitbelow splitright " Change the split screen behavior
 " set title " Show file title
-set wildmenu " Show a more advance menu
-set cc=80 " Show at 80 column a border for good code style
+" set wildmenu " Show a more advance menu
+" set cc=80 " Show at 80 column a border for good code style
 " filetype plugin indent on   " Allow auto-indenting depending on file type
-syntax on
+syntax enable
 " set spell " enable spell check (may need to download language package)
 set ttyfast " Speed up scrolling in Vim
 
-set ignorecase
-set smartcase
+"set ignorecase
+"set smartcase
 
 
 if exists('g:vscode')
-	xmap gc  <Plug>VSCodeCommentary
-	nmap gc  <Plug>VSCodeCommentary
-	omap gc  <Plug>VSCodeCommentary
-	nmap gcc <Plug>VSCodeCommentaryLine
+"	xmap gc  <Plug>VSCodeCommentary
+"	nmap gc  <Plug>VSCodeCommentary
+"	omap gc  <Plug>VSCodeCommentary
+"	nmap gcc <Plug>VSCodeCommentaryLine
 
 	nnoremap <silent> za <Cmd>call VSCodeNotify('editor.toggleFold')<CR>
 	nnoremap <silent> zR <Cmd>call VSCodeNotify('editor.unfoldAll')<CR>
@@ -45,13 +45,12 @@ if exists('g:vscode')
 	xnoremap <silent> zV <Cmd>call VSCodeNotify('editor.foldAllExcept')<CR>
 
 	nnoremap <silent> s <Cmd>call VSCodeNotify('whichkey.show')<CR>
-	xnoremap <silent> s <Cmd>call VSCodeNotify('whichkey.show')<CR>
 endif
 
 " Plugins here
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'phaazon/hop.nvim'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 call plug#end()
 
 " Hop
@@ -59,5 +58,9 @@ map <Space> <Cmd>HopWord<CR>
 " omap s v<Cmd>HopWord<CR>
 
 lua << EOF
-require'hop'.setup()
+local hop = require'hop'
+hop.setup {
+	create_hl_autocmd  = false,
+	uppercase_labels = true,
+}
 EOF

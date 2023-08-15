@@ -3,4 +3,5 @@
 ```
 nvim
 :PlugInstall
+:PlugUpdate
 ```
