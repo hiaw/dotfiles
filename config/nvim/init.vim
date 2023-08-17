@@ -54,7 +54,7 @@ Plug 'phaazon/hop.nvim'
 call plug#end()
 
 " Hop
-map <Space> <Cmd>HopWord<CR>
+" map <Space> <Cmd>HopWord<CR>
 " omap s v<Cmd>HopWord<CR>
 
 lua << EOF
