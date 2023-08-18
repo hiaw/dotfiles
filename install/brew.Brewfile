@@ -2,8 +2,8 @@
 # brew "ack"
 # brew "the_silver_searcher"
 # brew "tree"
-brew "mas"
-brew "watchman"
+# brew "mas"
+# brew "watchman"
 brew "wget"
 
 ## development tools

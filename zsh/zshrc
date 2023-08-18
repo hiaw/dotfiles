@@ -26,5 +26,19 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-. ~/.asdf/plugins/java/set-java-home.zsh
+# for ZSH
+case "$OSTYPE" in
+  darwin*)
+    # ...
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  . ~/.asdf/plugins/java/set-java-home.zsh
+  ;;
+  linux*)
+    # ...
+  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+  ;;
+  dragonfly*|freebsd*|netbsd*|openbsd*)
+    # ...
+  ;;
+esac
+
