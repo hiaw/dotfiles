@@ -25,3 +25,20 @@ ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/nvim/init.vim "${ZDOTDIR:-$HOME}"/.co
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.sh
 
 brew bundle install --file "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.Brewfile
+
+case "$OSTYPE" in
+  darwin*)
+    # ...
+  ;;
+  linux*)
+    # ...
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  asdf install nodejs 18.17.1
+
+  npm install -g prettier typescript typescript-language-server
+  ;;
+  dragonfly*|freebsd*|netbsd*|openbsd*)
+    # ...
+  ;;
+esac
+
