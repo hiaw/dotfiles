@@ -16,8 +16,8 @@ syntax enable
 " set spell " enable spell check (may need to download language package)
 set ttyfast " Speed up scrolling in Vim
 
-"set ignorecase
-"set smartcase
+set ignorecase
+set smartcase
 
 
 if exists('g:vscode')
