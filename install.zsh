@@ -15,7 +15,7 @@ done
 
 # NeoVim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/custom "${ZDOTDIR:-$HOME}"/.config/nvim/custom
+ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/lua/custom "${ZDOTDIR:-$HOME}"/.config/nvim/lua/customS
 # mkdir "${ZDOTDIR:-$HOME}"/.config/nvim
 # ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/nvim/init.vim "${ZDOTDIR:-$HOME}"/.config/nvim/init.vim
 
