@@ -1,7 +1,7 @@
 ---@type MappingsTable
 local M = {}
 
-M.general = {
+M.custom = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
