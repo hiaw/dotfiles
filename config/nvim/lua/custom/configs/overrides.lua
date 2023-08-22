@@ -2,18 +2,18 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
+    -- "vim",
     "lua",
     "html",
     "css",
     "javascript",
     "typescript",
     "tsx",
-    "c",
+    -- "c",
     "markdown",
     "markdown_inline",
-    "rust",
-    "toml"
+    -- "rust",
+    -- "toml"
   },
   indent = {
     enable = true,
@@ -37,13 +37,13 @@ M.mason = {
     "prettier",
 
     -- c/cpp stuff
-    "clangd",
-    "clang-format",
+    -- "clangd",
+    -- "clang-format",
 
     -- rust stuff
-    "cpptools",
-    "codelldb",
-    "rust-analyzer",
+    -- "cpptools",
+    -- "codelldb",
+    -- "rust-analyzer",
   },
 }
 
@@ -74,6 +74,12 @@ M.nvterm = {
       },
     }
   },
+}
+
+M.telescope = {
+  defaults = {
+    file_ignore_patterns = { "cdk.out", "coverage", "node_modules" },
+  }
 }
 
 return M

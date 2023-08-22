@@ -55,3 +55,8 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
+
+brew "ripgrep"
+brew "stylua"
+cask "iterm2"
+cask "font-hack-nerd-font"
