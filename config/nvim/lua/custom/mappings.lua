@@ -13,6 +13,8 @@ M.general = {
       end,
       "Toggle floating term",
     },
+
+    ["<leader>v"] = { ":vsplit<CR>", "Split Vertical" },
   },
 }
 
