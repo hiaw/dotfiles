@@ -67,10 +67,16 @@ local plugins = {
 		end,
 	},
 
+	{
+
+		"folke/trouble.nvim",
+		lazy = false,
+	},
+
 	--
 	"dense-analysis/ale",
 	-- "simrat39/rust-tools.nvim",
-  --
+	--
 	-- Useful completion sources:
 	-- 'hrsh7th/cmp-nvim-lsp-signature-help',
 	-- 'hrsh7th/cmp-vsnip'                   ,
