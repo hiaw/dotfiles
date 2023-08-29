@@ -68,9 +68,16 @@ local plugins = {
 	},
 
 	{
-
 		"folke/trouble.nvim",
 		lazy = false,
+	},
+
+	{
+		"johmsalas/text-case.nvim",
+		lazy = false,
+		config = function()
+			require("textcase").setup({})
+		end,
 	},
 
 	--
