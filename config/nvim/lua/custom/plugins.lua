@@ -74,7 +74,7 @@ local plugins = {
 
 	{
 		"johmsalas/text-case.nvim",
-		lazy = false,
+		keys = { "<leader>ga", { "<leader>ga", desc = "text-case", mode = "v" } },
 		config = function()
 			require("textcase").setup({})
 		end,
