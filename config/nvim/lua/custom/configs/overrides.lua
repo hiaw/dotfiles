@@ -78,7 +78,7 @@ M.nvterm = {
 
 M.telescope = {
 	defaults = {
-		file_ignore_patterns = { "cdk.out", "coverage", "node_modules" },
+		file_ignore_patterns = { "cdk.out", "coverage", "node_modules", "Index/DataStore" },
 	},
 }
 
