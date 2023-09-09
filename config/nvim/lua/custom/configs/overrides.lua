@@ -13,7 +13,7 @@ M.treesitter = {
 		"markdown",
 		"markdown_inline",
 		-- "rust",
-		-- "toml"
+		"toml",
 	},
 	indent = {
 		enable = true,
@@ -35,6 +35,7 @@ M.mason = {
 		"html-lsp",
 		"typescript-language-server",
 		"prettier",
+		"astro-language-server",
 
 		-- c/cpp stuff
 		-- "clangd",
