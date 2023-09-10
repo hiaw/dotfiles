@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PNPM_HOME="${ZDOTDIR:-$HOME}/.local/share/pnpm"
 export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
@@ -52,6 +53,12 @@ esac
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
+# pnpm
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 # bun completions
 [ -s "/home/daniel/.bun/_bun" ] && source "/home/daniel/.bun/_bun"
 
