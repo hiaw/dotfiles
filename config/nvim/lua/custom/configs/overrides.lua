@@ -9,6 +9,7 @@ M.treesitter = {
 		"javascript",
 		"typescript",
 		"tsx",
+		"graphql",
 		-- "c",
 		"markdown",
 		"markdown_inline",
@@ -37,6 +38,7 @@ M.mason = {
 		"prettier",
 		"astro-language-server",
 
+		"graphql-language-service-cli",
 		-- c/cpp stuff
 		-- "clangd",
 		-- "clang-format",
