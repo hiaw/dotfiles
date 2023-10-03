@@ -70,3 +70,6 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export AWS_SDK_LOAD_CONFIG=1
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
