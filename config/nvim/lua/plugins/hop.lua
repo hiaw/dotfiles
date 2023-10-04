@@ -2,6 +2,7 @@ return {
   {
     "phaazon/hop.nvim",
     lazy = false,
+    vscode = true,
     keys = {
       { ",", ":HopWord<CR>", desc = "Hop word" },
     },
