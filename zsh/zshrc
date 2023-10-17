@@ -41,7 +41,8 @@ case "$OSTYPE" in
   ;;
   linux*)
     # ...
-  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+    #
+	. "$HOME/.asdf/asdf.sh"
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
     # ...
