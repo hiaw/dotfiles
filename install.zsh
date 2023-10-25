@@ -12,22 +12,16 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/git/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/config/kitty/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.config/kitty/.${rcfile:t}"
-done
+ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/kitty" "${ZDOTDIR:-$HOME}/.config/kitty"
+ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/nvim" "${ZDOTDIR:-$HOME}/.config/nvim"
 
-
-# NeoVim
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/lua/custom "${ZDOTDIR:-$HOME}"/.config/nvim/lua/custom
-# mkdir "${ZDOTDIR:-$HOME}"/.config/nvim
-# ln -s "${ZDOTDIR:-$HOME}"/.dotfiles/config/nvim/init.vim "${ZDOTDIR:-$HOME}"/.config/nvim/init.vim
+chsh -s /bin/zsh
 
 # Package managers & packages
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/install.sh
 . "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.sh
 
-brew bundle install --file "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.Brewfile
+# brew bundle install --file "${ZDOTDIR:-$HOME}"/.dotfiles/install/brew.Brewfile
 
 case "$OSTYPE" in
   darwin*)

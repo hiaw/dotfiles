@@ -42,7 +42,8 @@ case "$OSTYPE" in
   linux*)
     # ...
     #
-	. "$HOME/.asdf/asdf.sh"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
     # ...
@@ -67,3 +68,4 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
