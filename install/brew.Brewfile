@@ -1,8 +1,4 @@
 ## cli tools
-# brew "ack"
-# brew "the_silver_searcher"
-# brew "tree"
-# brew "mas"
 brew "watchman"
 brew "wget"
 
@@ -14,25 +10,26 @@ brew "git"
 brew "neovim"
 
 ## general
-cask "discord"
 # cask "firefox"
 # cask "google-chrome"
-cask "rectangle"
+cask "discord"
 # cask "slack"
-cask "spotify"
-cask "steam"
-# cask "vlc"
 # cask "1password"
+cask "rectangle"
+cask "steam"
+cask "spotify"
+# cask "vlc"
 # cask "calibre"
 # cask "dropbox"
 # cask "handbrake"
 
 ## Development"
 cask "android-studio"
+cask "visual-studio-code"
+cask "sourcetree"
 cask "flipper"
 cask "insomnia"
-cask "sourcetree"
-cask "visual-studio-code"
+cask "iterm2"
 
 ## Quick Look Plugins
 # cask "betterzipql"
@@ -47,18 +44,17 @@ cask "visual-studio-code"
 # cask "webpquicklook"
 
 ## Mac App Store
+mas "TestFlight", id: 899247664
+mas "Xcode", id: 497799835
 # mas "HP Smart", id: 1474276998
 # mas "Grammarly", id: 1462114288
 # mas "Keynote", id: 409183694
 # mas "Numbers", id: 409203825
 # mas "Pages", id: 409201541
-mas "TestFlight", id: 899247664
-mas "Xcode", id: 497799835
 
 # Neovim
 brew "ripgrep"
 brew "fd"
 brew "lazygit"
 brew "stylua"
-cask "iterm2"
 cask "font-hack-nerd-font"
