@@ -72,3 +72,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2023-11-08 00:49:01
 export PATH="$PATH:/Users/danielchong/.local/bin"
+
+# bit
+case ":$PATH:" in
+  *":/Users/danielchong/bin:"*) ;;
+  *) export PATH="$PATH:/Users/danielchong/bin" ;;
+esac
+# bit end
