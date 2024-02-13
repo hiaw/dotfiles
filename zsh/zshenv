@@ -10,5 +10,5 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# . "$HOME/.cargo/env"
-source "/Users/danielchong/.rover/env"
+. "$HOME/.cargo/env"
+# source "/Users/danielchong/.rover/env"
