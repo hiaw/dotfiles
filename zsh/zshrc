@@ -72,3 +72,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2023-11-08 00:49:01
 export PATH="$PATH:/Users/danielchong/.local/bin"
+
+# sst
+export PATH=/Users/danielchong/.sst/bin:$PATH

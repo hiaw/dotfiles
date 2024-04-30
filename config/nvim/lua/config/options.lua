@@ -3,3 +3,6 @@
 -- Add any additional options here
 
 vim.opt.wrap = true
+vim.lsp.set_log_level("debug")
+
+vim.api.nvim_create_user_command("CodeiumChat", "call codeium#Chat()", {})
