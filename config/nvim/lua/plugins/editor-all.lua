@@ -28,6 +28,65 @@ return {
     end,
   },
   -- {
+  --   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+  --   ft = { "typescriptreact" },
+  --   dependencies = {
+  --     "mfussenegger/nvim-jdtls",
+  --     "williamboman/mason.nvim",
+  --   },
+  --   config = function()
+  --     local sonar_language_server_path =
+  --       require("mason-registry").get_package("sonarlint-language-server"):get_install_path()
+  --     local analyzers_path = sonar_language_server_path .. "/extension/analyzers"
+  --     require("sonarlint").setup({
+  --       server = {
+  --         cmd = {
+  --           sonar_language_server_path .. "/sonarlint-language-server.cmd",
+  --           "-stdio",
+  --           "-analyzers",
+  --           vim.fn.expand(analyzers_path .. "/sonarjs.jar"),
+  --         },
+  --       },
+  --       filetypes = {
+  --         "typescriptreact",
+  --       },
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   dependencies = {
+  --     url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+  --   },
+  --   opts = {
+  --     servers = {
+  --       sonarlint = {},
+  --     },
+  --     setup = {
+  --       sonarlint = function()
+  --         require("sonarlint").setup({
+  --           server = {
+  --             cmd = {
+  --               "sonarlint-language-server",
+  --               -- Ensure that sonarlint-language-server uses stdio channel
+  --               "-stdio",
+  --               "-analyzers",
+  --               -- paths to the analyzers you need, using those for python and java in this example
+  --               vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
+  --               vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
+  --               vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
+  --             },
+  --           },
+  --
+  --           filetypes = {
+  --             "typescriptreact",
+  --           },
+  --         })
+  --       end,
+  --     },
+  --   },
+  -- },
+  -- {
   --   "olimorris/codecompanion.nvim",
   --   event = "VeryLazy",
   --   dependencies = {

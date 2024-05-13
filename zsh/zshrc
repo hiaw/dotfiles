@@ -75,3 +75,5 @@ export PATH="$PATH:/Users/danielchong/.local/bin"
 
 # sst
 export PATH=/Users/danielchong/.sst/bin:$PATH
+
+export PATH=/Users/danielchong/.asdf/shim:$PATH
