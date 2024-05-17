@@ -4,7 +4,7 @@ return {
     lazy = false,
     vscode = true,
     keys = {
-      { ",", ":HopWord<CR>", desc = "Hop word" },
+      { ",", "<cmd>HopWord<CR>", desc = "Hop word" },
     },
     config = function()
       require("hop").setup({
