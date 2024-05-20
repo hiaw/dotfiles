@@ -6,7 +6,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     keys = {
-      { "<tab>", mode = { "i" }, false },
+      { "<Tab>", function() end, mode = { "i" }, expr = false },
     },
   },
   {
