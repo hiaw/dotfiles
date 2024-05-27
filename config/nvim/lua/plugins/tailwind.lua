@@ -22,4 +22,15 @@ return { -- add pyright to lspconfig
       },
     },
   },
+  -- {
+  --   "echasnovski/mini.hipatterns",
+  --   opts = {
+  --     -- custom LazyVim option to enable the tailwind integration
+  --     tailwind = {
+  --       enabled = true,
+  --       ft = { "rust" },
+  --       style = "full",
+  --     },
+  --   },
+  -- },
 }
