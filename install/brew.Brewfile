@@ -1,35 +1,35 @@
 ## cli tools
 brew "watchman"
-brew "wget"
+# brew "wget"
 
 ## development tools
 brew "asdf"
 brew "awscli"
-brew "cocoapods"
-brew "git"
+# brew "git"
 brew "neovim"
+# brew "cocoapods"
 
 ## general
 # cask "firefox"
 # cask "google-chrome"
-cask "discord"
+# cask "discord"
 # cask "slack"
 # cask "1password"
 cask "rectangle"
-cask "steam"
-cask "spotify"
+# cask "steam"
+# cask "spotify"
 # cask "vlc"
 # cask "calibre"
 # cask "dropbox"
 # cask "handbrake"
 
 ## Development"
-cask "android-studio"
+# cask "android-studio"
 cask "visual-studio-code"
 cask "sourcetree"
-cask "flipper"
-cask "insomnia"
-cask "iterm2"
+# cask "flipper"
+# cask "insomnia"
+# cask "iterm2"
 
 ## Quick Look Plugins
 # cask "betterzipql"
@@ -44,8 +44,8 @@ cask "iterm2"
 # cask "webpquicklook"
 
 ## Mac App Store
-mas "TestFlight", id: 899247664
-mas "Xcode", id: 497799835
+# mas "TestFlight", id: 899247664
+# mas "Xcode", id: 497799835
 # mas "HP Smart", id: 1474276998
 # mas "Grammarly", id: 1462114288
 # mas "Keynote", id: 409183694
