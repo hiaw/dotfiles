@@ -27,6 +27,12 @@ return {
       table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
     end,
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
+    },
+  },
   -- {
   --   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   --   ft = { "typescriptreact" },
