@@ -1,5 +1,6 @@
 nodejs 18.17.1
 pnpm 8.9.2
+bun 1.1.26
 java zulu-17.50.19
 ruby 3.3.0
 dotnet 6.0.421
