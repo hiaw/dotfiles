@@ -1,22 +1,13 @@
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = zdiff3
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED \
+          -c '$wincmd w' -c 'wincmd J'
 [user]
 	name = Daniel Chong
 	email = danielgq.chong@gmail.com
 [github]
 	user = hiaw
-[color]
-	ui = auto
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-[core]
-	excludesfile = /Users/danielchong/.gitignore_global
-[commit]
-	template = /Users/danielchong/.stCommitMsg
