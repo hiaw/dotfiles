@@ -33,6 +33,11 @@ return {
       inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
     },
   },
+  { "nvim-neotest/neotest-jest" },
+  {
+    "nvim-neotest/neotest",
+    opts = { adapters = { "neotest-jest" } },
+  },
   -- {
   --   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   --   ft = { "typescriptreact" },
