@@ -38,6 +38,7 @@ return {
     "nvim-neotest/neotest",
     opts = { adapters = { "neotest-jest" } },
   },
+  { "mbbill/undotree" },
   -- {
   --   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   --   ft = { "typescriptreact" },
