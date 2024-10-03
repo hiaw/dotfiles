@@ -39,7 +39,7 @@ case "$OSTYPE" in
   darwin*)
     # ...
   . /opt/homebrew/opt/asdf/libexec/asdf.sh
-  . ~/.asdf/plugins/java/set-java-home.zsh
+  # . ~/.asdf/plugins/java/set-java-home.zsh
   ;;
   linux*)
     # ...

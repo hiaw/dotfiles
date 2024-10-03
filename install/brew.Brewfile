@@ -55,6 +55,7 @@ cask "visual-studio-code"
 # Neovim
 brew "ripgrep"
 brew "fd"
+brew "ast-grep"
 brew "lazygit"
 brew "stylua"
 cask "font-hack-nerd-font"

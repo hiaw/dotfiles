@@ -7,4 +7,4 @@ vim.opt.number = false
 vim.opt.relativenumber = false
 -- vim.lsp.set_log_level("debug")
 
-vim.api.nvim_create_user_command("CodeiumChat", "call codeium#Chat()", {})
+-- vim.api.nvim_create_user_command("CodeiumChat", "call codeium#Chat()", {})

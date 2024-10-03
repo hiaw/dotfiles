@@ -9,36 +9,35 @@ return {
       { "<Tab>", function() end, mode = { "i" }, expr = false },
     },
   },
-  {
-    "Exafunction/codeium.vim",
-    lazy = false,
-    -- event = "BufEnter",
-    config = function()
-      vim.keymap.set("i", "<Tab>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true, silent = true })
-    end,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    optional = true,
-    event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
-    },
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   lazy = false,
+  --   -- event = "BufEnter",
+  --   config = function()
+  --     vim.keymap.set("i", "<Tab>", function()
+  --       return vim.fn["codeium#Accept"]()
+  --     end, { expr = true, silent = true })
+  --   end,
+  -- },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   optional = true,
+  --   event = "VeryLazy",
+  --   opts = function(_, opts)
+  --     table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
+  --   end,
+  -- },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
+  --   },
+  -- },
   { "nvim-neotest/neotest-jest" },
   {
     "nvim-neotest/neotest",
     opts = { adapters = { "neotest-jest" } },
   },
-  { "mbbill/undotree" },
   -- {
   --   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   --   ft = { "typescriptreact" },
