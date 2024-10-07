@@ -27,12 +27,12 @@ return {
   --     table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
   --   end,
   -- },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = {
-  --     inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
-  --   },
-  -- },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
+    },
+  },
   { "nvim-neotest/neotest-jest" },
   {
     "nvim-neotest/neotest",
