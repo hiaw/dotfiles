@@ -8,10 +8,10 @@ return {
   --   name = "catppuccin",
   --   enabled = false,
   -- },
-  {
-    "folke/persistence.nvim",
-    enabled = false,
-  },
+  -- {
+  --   "folke/persistence.nvim",
+  --   enabled = false,
+  -- },
   -- {
   --   "garymjr/nvim-snippets",
   --   enabled = false,
