@@ -192,7 +192,7 @@ return {
       provider = "copilot", -- Recommend using Claude
       auto_suggestions_provider = "copilot",
       behaviour = {
-        auto_suggestions = true,
+        auto_suggestions = false,
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
