@@ -4,6 +4,12 @@ return {
     event = "VeryLazy",
   },
   {
+    "tiagovla/scope.nvim",
+    config = function()
+      require("scope").setup({})
+    end,
+  },
+  {
     "L3MON4D3/LuaSnip",
     keys = {
       { "<Tab>", function() end, mode = { "i" }, expr = false },
