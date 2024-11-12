@@ -15,15 +15,6 @@ return {
       { "<Tab>", function() end, mode = { "i" }, expr = false },
     },
   },
-  {
-    "folke/zen-mode.nvim",
-    opts = {},
-  },
-  {
-    "folke/twilight.nvim",
-    opts = {},
-  },
-  { "preservim/vim-pencil" },
   -- {
   --   "Exafunction/codeium.vim",
   --   lazy = false,
