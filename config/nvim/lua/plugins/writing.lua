@@ -14,6 +14,9 @@ return {
           cursorline = false,
         },
       },
+      plugins = {
+        kitty = { enabled = true, font = "+10" },
+      },
     },
   },
   {
