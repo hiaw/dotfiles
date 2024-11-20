@@ -44,7 +44,7 @@ return {
       workspaces = {
         {
           name = "Default",
-          path = "~/Documents/vault",
+          path = "~/Sync/vault",
         },
       },
 
