@@ -30,6 +30,7 @@ cask "visual-studio-code"
 # cask "flipper"
 # cask "insomnia"
 # cask "iterm2"
+cask "nikitabobko/tap/aerospace"
 
 ## Quick Look Plugins
 # cask "betterzipql"
