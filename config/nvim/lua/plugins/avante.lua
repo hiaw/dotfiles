@@ -190,7 +190,7 @@ return {
     opts = {
       -- add any opts here
       provider = "copilot", -- Recommend using Claude
-      auto_suggestions_provider = "copilot",
+      -- auto_suggestions_provider = "copilot",
       behaviour = {
         auto_suggestions = false,
       },
