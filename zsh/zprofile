@@ -35,8 +35,9 @@ fi
 # Paths
 #
 
-export ANDROID_HOME="/Users/danielchong/Library/Android/sdk"
+export ANDROID_HOME="${ZDOTDIR:-$HOME}/Library/Android/sdk"
 
+  
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -74,7 +75,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export AWS_SDK_LOAD_CONFIG=1
 
 # Created by `pipx` on 2023-11-08 00:49:01
-export PATH="$PATH:/Users/danielchong/.local/bin"
+export PATH="$PATH:${ZDOTDIR:-$HOME}/.local/bin"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh"

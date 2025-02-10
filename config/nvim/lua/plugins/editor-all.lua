@@ -45,7 +45,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript" } },
+      inlay_hints = { enabled = true, exclude = { "typescriptreact", "typescript", "dart" } },
     },
   },
   { "nvim-neotest/neotest-jest" },
