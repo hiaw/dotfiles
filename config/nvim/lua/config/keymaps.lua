@@ -11,3 +11,11 @@ end, { desc = "Toggle Comment", expr = true })
 map("x", "<C-/>", function()
   return MiniComment.operator()
 end, { desc = "Toggle Comment", expr = true })
+
+-- So that it work in tmux
+map("n", "<C-_>", function()
+  return MiniComment.operator() .. "_"
+end, { desc = "Toggle Comment", expr = true })
+map("x", "<C-_>", function()
+  return MiniComment.operator()
+end, { desc = "Toggle Comment", expr = true })
