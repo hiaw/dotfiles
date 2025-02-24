@@ -194,6 +194,9 @@ return {
       behaviour = {
         auto_suggestions = false,
       },
+      file_selector = {
+        provider = "snacks",
+      },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
