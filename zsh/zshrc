@@ -85,3 +85,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# CLAUDE_CODE
+export CLAUDE_CODE_USE_BEDROCK=1
+ 
