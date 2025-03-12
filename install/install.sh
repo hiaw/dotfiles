@@ -7,5 +7,5 @@ chsh -s /bin/zsh
 # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 cd ~ || exit
-$ git clone --single-branch https://github.com/gpakosz/.tmux.git
-$ ln -s -f .tmux/.tmux.conf
+git clone --single-branch https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf

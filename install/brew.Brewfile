@@ -8,6 +8,7 @@ brew "awscli"
 # brew "git"
 brew "neovim"
 # brew "cocoapods"
+brew "tmux-mem-cpu-load"
 
 ## general
 # cask "firefox"
