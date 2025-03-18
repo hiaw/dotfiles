@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "disabled_tools": [
+        
+      ]
+    },
+    "echo": {
+      "command": "node",
+      "autoApprove": [
+        "echo"
+      ],
+      "args": [
+        "/Users/danielchong/.mcphub/servers/echo-mcp/build/index.js"
+      ],
+      "disabled": false
+    },
+    "time": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time"
+      ],
+      "disabled": true
+    }
+  }
+}
