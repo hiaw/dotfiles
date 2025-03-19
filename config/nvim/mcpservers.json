@@ -2,29 +2,20 @@
   "mcpServers": {
     "fetch": {
       "command": "uvx",
-      "args": [
-        "mcp-server-fetch"
-      ],
-      "disabled_tools": [
-        
-      ]
+      "disabled_tools": [],
+      "args": ["mcp-server-fetch"]
     },
     "time": {
+      "args": ["mcp-server-time"],
       "disabled": true,
-      "args": [
-        "mcp-server-time"
-      ],
       "command": "uvx"
     },
     "echo": {
-      "autoApprove": [
-        "echo"
-      ],
-      "disabled": false,
-      "args": [
-        "/Users/danielchong/.mcphub/servers/echo-mcp/build/index.js"
-      ],
+      "args": ["/Users/danielchong/.mcphub/servers/echo-mcp/build/index.js"],
+      "disabled": true,
+      "autoApprove": ["echo"],
       "command": "node"
     }
   }
 }
+

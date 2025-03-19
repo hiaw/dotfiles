@@ -1,3 +1,17 @@
+require("which-key").add({
+  { "<leader>a", group = "Code Companion" }, -- NOTE: add for avante.nvim
+  {
+    mode = { "n", "v" },
+    {
+      "<leader>am",
+      function()
+        vim.cmd("MCPHub")
+      end,
+      desc = "MCP Hub Start",
+    },
+  },
+})
+
 return {
   "ravitemer/mcphub.nvim",
   dependencies = {

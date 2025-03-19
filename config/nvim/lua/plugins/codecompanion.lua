@@ -102,4 +102,14 @@ return {
       require("plugins.codecompanion.fidget-spinner"):init()
     end,
   },
+  -- {
+  --   "saghen/blink.cmp",
+  --   opts = {
+  --     sources = {
+  --       per_filetype = {
+  --         codecompanion = { "codecompanion" },
+  --       },
+  --     },
+  --   },
+  -- },
 }
