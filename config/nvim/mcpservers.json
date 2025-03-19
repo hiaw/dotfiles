@@ -9,22 +9,22 @@
         
       ]
     },
-    "echo": {
-      "command": "node",
-      "autoApprove": [
-        "echo"
-      ],
-      "args": [
-        "/Users/danielchong/.mcphub/servers/echo-mcp/build/index.js"
-      ],
-      "disabled": false
-    },
     "time": {
-      "command": "uvx",
+      "disabled": true,
       "args": [
         "mcp-server-time"
       ],
-      "disabled": true
+      "command": "uvx"
+    },
+    "echo": {
+      "autoApprove": [
+        "echo"
+      ],
+      "disabled": false,
+      "args": [
+        "/Users/danielchong/.mcphub/servers/echo-mcp/build/index.js"
+      ],
+      "command": "node"
     }
   }
 }
