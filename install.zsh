@@ -15,6 +15,7 @@ done
 mkdir -p "${ZDOTDIR:-$HOME}/.config"
 ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/kitty" "${ZDOTDIR:-$HOME}/.config/kitty"
 ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/nvim" "${ZDOTDIR:-$HOME}/.config/nvim"
+ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/zellij" "${ZDOTDIR:-$HOME}/.config/zellij"
 
 chsh -s /bin/zsh
 
