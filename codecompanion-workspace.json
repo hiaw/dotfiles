@@ -1,0 +1,213 @@
+{
+  "name": "Dotfiles Workspace",
+  "version": "1.0.0",
+  "system_prompt": "You are a helpful assistant with expertise in terminal configurations, shell scripting, and development environments. You're helping with a dotfiles repository that manages various terminal and application configurations.",
+  "groups": [
+    {
+      "name": "Neovim Configuration",
+      "system_prompt": "You are assisting with Neovim configuration files. The configuration is structured with lazy.nvim as the package manager, and various plugins are organized in separate files. Help with optimizing, explaining, or troubleshooting these configurations.",
+      "data": [
+        "nvim_init", 
+        "nvim_lazy", 
+        "nvim_options", 
+        "nvim_keymaps", 
+        "nvim_autocmds", 
+        "nvim_plugins"
+      ]
+    },
+    {
+      "name": "Zsh Configuration",
+      "system_prompt": "You are assisting with Zsh shell configuration using Prezto framework. Help with shell customization, environment variables, aliases, and functions.",
+      "data": [
+        "zsh_zshrc", 
+        "zsh_zpreztorc", 
+        "zsh_zshenv", 
+        "zsh_zprofile", 
+        "zsh_zlogin", 
+        "zsh_zlogout"
+      ]
+    },
+    {
+      "name": "Installation Scripts",
+      "system_prompt": "You are assisting with installation scripts that set up the dotfiles and install required software. Help with improving, explaining, or troubleshooting these scripts.",
+      "data": [
+        "install_script", 
+        "brew_script", 
+        "brew_file", 
+        "main_install"
+      ]
+    },
+    {
+      "name": "Terminal Tools",
+      "system_prompt": "You are assisting with configuration for various terminal tools like Kitty terminal, Zellij terminal multiplexer, and other utilities. Help with optimizing or explaining these configurations.",
+      "data": [
+        "kitty_config", 
+        "zellij_config", 
+        "tmux_config", 
+        "aerospace_config"
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "system_prompt": "You are assisting with configuration for development tools like ASDF version manager, Git, and code formatting tools. Help with optimizing or explaining these configurations.",
+      "data": [
+        "asdf_config", 
+        "tool_versions", 
+        "git_config", 
+        "git_ignore", 
+        "prettier_config", 
+        "markdownlint_config"
+      ]
+    },
+    {
+      "name": "Utility Scripts",
+      "system_prompt": "You are assisting with utility scripts for maintenance tasks. Help with optimizing or explaining these scripts.",
+      "data": [
+        "clean_ds_store", 
+        "clean_trash"
+      ]
+    }
+  ],
+  "data": {
+    "nvim_init": {
+      "type": "file",
+      "path": "./config/nvim/init.lua",
+      "description": "Main Neovim initialization file that sets up the editor and loads configurations"
+    },
+    "nvim_lazy": {
+      "type": "file",
+      "path": "./config/nvim/lua/config/lazy.lua",
+      "description": "Configuration for lazy.nvim package manager"
+    },
+    "nvim_options": {
+      "type": "file",
+      "path": "./config/nvim/lua/config/options.lua",
+      "description": "Neovim editor options and settings"
+    },
+    "nvim_keymaps": {
+      "type": "file",
+      "path": "./config/nvim/lua/config/keymaps.lua",
+      "description": "Custom keybindings for Neovim"
+    },
+    "nvim_autocmds": {
+      "type": "file",
+      "path": "./config/nvim/lua/config/autocmds.lua",
+      "description": "Neovim autocommands for automated actions"
+    },
+    "nvim_plugins": {
+      "type": "symbols",
+      "path": "./config/nvim/lua/plugins",
+      "description": "Directory containing all Neovim plugin configurations"
+    },
+    "zsh_zshrc": {
+      "type": "file",
+      "path": "./zsh/zshrc",
+      "description": "Main Zsh configuration file loaded for interactive shells"
+    },
+    "zsh_zpreztorc": {
+      "type": "file",
+      "path": "./zsh/zpreztorc",
+      "description": "Configuration file for the Prezto Zsh framework"
+    },
+    "zsh_zshenv": {
+      "type": "file",
+      "path": "./zsh/zshenv",
+      "description": "Zsh environment variables loaded for all shells"
+    },
+    "zsh_zprofile": {
+      "type": "file",
+      "path": "./zsh/zprofile",
+      "description": "Zsh configuration loaded at login"
+    },
+    "zsh_zlogin": {
+      "type": "file",
+      "path": "./zsh/zlogin",
+      "description": "Zsh commands executed after login"
+    },
+    "zsh_zlogout": {
+      "type": "file",
+      "path": "./zsh/zlogout",
+      "description": "Zsh commands executed during logout"
+    },
+    "install_script": {
+      "type": "file",
+      "path": "./install/install.sh",
+      "description": "Main installation script for dotfiles"
+    },
+    "brew_script": {
+      "type": "file",
+      "path": "./install/brew.sh",
+      "description": "Script for installing Homebrew packages"
+    },
+    "brew_file": {
+      "type": "file",
+      "path": "./install/brew.Brewfile",
+      "description": "List of Homebrew packages, casks, and taps to install"
+    },
+    "main_install": {
+      "type": "file",
+      "path": "./install.zsh",
+      "description": "Main installation script entry point"
+    },
+    "kitty_config": {
+      "type": "file",
+      "path": "./config/kitty/kitty.conf",
+      "description": "Configuration file for Kitty terminal emulator"
+    },
+    "zellij_config": {
+      "type": "file",
+      "path": "./config/zellij/config.kdl",
+      "description": "Configuration file for Zellij terminal multiplexer"
+    },
+    "tmux_config": {
+      "type": "file",
+      "path": "./runcom/tmux.conf.local",
+      "description": "Local configuration for Tmux terminal multiplexer"
+    },
+    "aerospace_config": {
+      "type": "file",
+      "path": "./runcom/aerospace.toml",
+      "description": "Configuration for Aerospace window manager"
+    },
+    "asdf_config": {
+      "type": "file",
+      "path": "./runcom/asdfrc",
+      "description": "Configuration for ASDF version manager"
+    },
+    "tool_versions": {
+      "type": "file",
+      "path": "./runcom/tool-versions",
+      "description": "Version specifications for tools managed by ASDF"
+    },
+    "git_config": {
+      "type": "file",
+      "path": "./git/gitconfig",
+      "description": "Git configuration with user settings and aliases"
+    },
+    "git_ignore": {
+      "type": "file",
+      "path": "./git/gitignore",
+      "description": "Global gitignore file with patterns to ignore"
+    },
+    "prettier_config": {
+      "type": "file",
+      "path": "./runcom/prettierrc",
+      "description": "Configuration for Prettier code formatter"
+    },
+    "markdownlint_config": {
+      "type": "file",
+      "path": "./runcom/markdownlint-cli2.jsonc",
+      "description": "Configuration for Markdown linter"
+    },
+    "clean_ds_store": {
+      "type": "file",
+      "path": "./other/clean_ds_store.sh",
+      "description": "Script to clean .DS_Store files on macOS"
+    },
+    "clean_trash": {
+      "type": "file",
+      "path": "./other/clean_trash.sh",
+      "description": "Script to clean trash files"
+    }
+  }
+}
