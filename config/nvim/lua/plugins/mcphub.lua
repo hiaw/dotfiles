@@ -12,6 +12,20 @@ require("which-key").add({
   },
 })
 
+require("codecompanion").setup({
+  --other config
+  extensions = {
+    mcphub = {
+      callback = "mcphub.extensions.codecompanion",
+      opts = {
+        make_vars = true,
+        make_slash_commands = true,
+        show_result_in_chat = true,
+      },
+    },
+  },
+})
+
 return {
   "ravitemer/mcphub.nvim",
   dependencies = {
