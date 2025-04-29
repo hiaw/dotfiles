@@ -14,9 +14,15 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/daniel.chong/.dotfiles"
+        "/Users/daniel.chong"
       ]
+    },
+    "github.com/mendableai/firecrawl-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+      }
     }
   }
 }
-
