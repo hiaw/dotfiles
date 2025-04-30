@@ -12,6 +12,14 @@ require("which-key").add({
   },
 })
 
+-- require("lualine").setup({
+--   sections = {
+--     lualine_x = {
+--       { require("mcphub.extensions.lualine") },
+--     },
+--   },
+-- })
+
 require("codecompanion").setup({
   --other config
   extensions = {
@@ -27,13 +35,16 @@ require("codecompanion").setup({
 })
 
 return {
-  "ravitemer/mcphub.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+  -- { "ellisonleao/gruvbox.nvim" },
+  {
+    "ravitemer/mcphub.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+    },
+    -- cmd = "MCPHub", -- lazily start the hub when `MCPHub` is called
+    build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
+    config = function()
+      require("mcphub").setup()
+    end,
   },
-  -- cmd = "MCPHub", -- lazily start the hub when `MCPHub` is called
-  build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
-  config = function()
-    require("mcphub").setup()
-  end,
 }
