@@ -101,8 +101,11 @@ return {
                 default = "llama3:latest", -- or any model you prefer
                 description = "Ollama model to use",
                 items = {
+                  "deepseek-r1:14b",
                   "gemma3:12b",
                   "llama3:latest",
+                  "mistral-small3.1",
+                  "qwen3:14b",
                 },
               },
             },
