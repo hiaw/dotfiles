@@ -78,7 +78,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # sst
 export PATH=$HOME/.sst/bin:$PATH
 
-export PATH=$HOME/.asdf/shim:$PATH
+export PATH=$HOME/.asdf/shims:$PATH
 export PATH=$HOME/Documents/flutter/ff_flutter_sdk/flutter/bin/:$PATH
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -89,3 +89,5 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # CLAUDE_CODE
 # export CLAUDE_CODE_USE_BEDROCK=1
 # export DISABLE_PROMPT_CACHING=1
+
+alias pipreshim='pip install $@ && asdf reshim python'
