@@ -16,7 +16,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "${HOME}/.dotfiles"
+        "/Users/daniel.chong/.dotfiles"
       ]
     },
     "github.com/NightTrek/Ollama-mcp": {
@@ -25,7 +25,7 @@
         "OLLAMA_HOST": "http://127.0.0.1:11434"
       },
       "disabled": false,
-      "args": ["${HOME}/.mcphub/servers/ollama-mcp/build/index.js"]
+      "args": ["/Users/daniel.chong/.mcphub/servers/ollama-mcp/build/index.js"]
     },
     "github.com/modelcontextprotocol/servers/tree/main/src/git": {
       "command": "uvx",
