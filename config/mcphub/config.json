@@ -1,0 +1,6 @@
+{
+  "port": 3051,
+  "log": {
+    "level": "debug"
+  }
+}
