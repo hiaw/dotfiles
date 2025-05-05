@@ -113,6 +113,25 @@ return {
             api_url = "http://localhost:11434/api",
           })
         end,
+        gemini = function()
+          return require("codecompanion.adapters").extend("gemini", {
+            schema = {
+              model = {
+                default = "gemini-2.0-flash",
+                description = "Gemini model to use",
+                items = {
+                  "gemini-2.0-flash",
+                  "gemini-1.5-pro",
+                  "gemini-2.5-pro-exp-03-25",
+                },
+              },
+            },
+            -- api_key = os.getenv("GOOGLE_API_KEY"), -- Set your Google API key in environment variables
+            env = {
+              api_key = "cmd:op read op://private/GeminiAPI/credential --no-newline",
+            },
+          })
+        end,
         -- claude = function()
         --   return require("codecompanion.adapters").extend("claude", {
         --     -- schema = {
@@ -145,24 +164,27 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "copilot",
+          adapter = "gemini",
           adapters = {
             copilot = { title = "Claude" },
             ollama = { title = "Ollama" },
+            gemini = { title = "Gemini" },
           },
         },
         inline = {
-          adapter = "copilot",
+          adapter = "gemini",
           adapters = {
             copilot = { title = "Claude" },
             ollama = { title = "Ollama" },
+            gemini = { title = "Gemini" },
           },
         },
         agent = {
-          adapter = "copilot",
+          adapter = "gemini",
           adapters = {
             copilot = { title = "Claude" },
             ollama = { title = "Ollama" },
+            gemini = { title = "Gemini" },
           },
         },
       },
@@ -514,7 +536,7 @@ return {
       {
         mapping_key_prefix .. "s",
         function()
-          vim.ui.select({ "copilot", "ollama" }, { prompt = "Select AI adapter" }, function(choice)
+          vim.ui.select({ "copilot", "ollama", "gemini" }, { prompt = "Select AI adapter" }, function(choice)
             if choice then
               local codecompanion = require("codecompanion")
               -- Use the setup function to update configuration
