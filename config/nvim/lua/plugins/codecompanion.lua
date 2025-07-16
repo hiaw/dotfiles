@@ -89,7 +89,7 @@ return {
           return require("codecompanion.adapters").extend("copilot", {
             schema = {
               model = {
-                default = "claude-3.7-sonnet",
+                default = "claude-sonnet-4",
               },
             },
           })
@@ -164,7 +164,7 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "gemini",
+          adapter = "copilot",
           adapters = {
             copilot = { title = "Claude" },
             ollama = { title = "Ollama" },
@@ -172,7 +172,7 @@ return {
           },
         },
         inline = {
-          adapter = "gemini",
+          adapter = "copilot",
           adapters = {
             copilot = { title = "Claude" },
             ollama = { title = "Ollama" },
@@ -180,7 +180,7 @@ return {
           },
         },
         agent = {
-          adapter = "gemini",
+          adapter = "copilot",
           adapters = {
             copilot = { title = "Claude" },
             ollama = { title = "Ollama" },

@@ -1,3 +1,4 @@
 npm-debug.log
 *.lock.json
 config/mcphub/.env
+.opencode

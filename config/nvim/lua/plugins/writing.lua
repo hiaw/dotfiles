@@ -1,25 +1,25 @@
 return {
-  -- {
-  --   "folke/zen-mode.nvim",
-  --   opts = {
-  --     on_open = function()
-  --       vim.o.cmdheight = 1
-  --     end,
-  --     on_close = function()
-  --       vim.o.cmdheight = 0
-  --     end,
-  --     window = {
-  --       options = {
-  --         signcolumn = "no",
-  --         cursorline = false,
-  --       },
-  --     },
-  --   },
-  -- },
-  -- {
-  --   "folke/twilight.nvim",
-  --   opts = {},
-  -- },
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      on_open = function()
+        vim.o.cmdheight = 1
+      end,
+      on_close = function()
+        vim.o.cmdheight = 0
+      end,
+      window = {
+        options = {
+          signcolumn = "no",
+          cursorline = false,
+        },
+      },
+    },
+  },
+  {
+    "folke/twilight.nvim",
+    opts = {},
+  },
   { "preservim/vim-pencil" },
   {
     "epwalsh/obsidian.nvim",
