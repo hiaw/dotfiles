@@ -165,55 +165,15 @@ return {
       strategies = {
         chat = {
           adapter = "copilot",
-          adapters = {
-            copilot = { title = "Claude" },
-            ollama = { title = "Ollama" },
-            gemini = { title = "Gemini" },
-          },
         },
         inline = {
           adapter = "copilot",
-          adapters = {
-            copilot = { title = "Claude" },
-            ollama = { title = "Ollama" },
-            gemini = { title = "Gemini" },
-          },
         },
         agent = {
           adapter = "copilot",
-          adapters = {
-            copilot = { title = "Claude" },
-            ollama = { title = "Ollama" },
-            gemini = { title = "Gemini" },
-          },
-        },
-      },
-      display = {
-        chat = {
-          auto_scroll = false,
         },
       },
       prompt_library = {
-        -- ["Switch to Ollama Gemma3"] = {
-        --   strategy = "chat",
-        --   description = "Using Gemma3 to chat",
-        --   opts = {
-        --     adapter = {
-        --       name = "ollama",
-        --       model = "gemma3:12b",
-        --     },
-        --   },
-        -- },
-        -- ["Switch to Ollama Llama3"] = {
-        --   strategy = "chat",
-        --   description = "Using Llama3 to chat",
-        --   opts = {
-        --     adapter = {
-        --       name = "ollama",
-        --       model = "llama3:latest",
-        --     },
-        --   },
-        -- },
         -- Custom the default prompt
         ["Generate a Commit Message"] = {
           prompts = {
@@ -533,53 +493,6 @@ return {
     end,
 
     keys = {
-      {
-        mapping_key_prefix .. "s",
-        function()
-          vim.ui.select({ "copilot", "ollama", "gemini" }, { prompt = "Select AI adapter" }, function(choice)
-            if choice then
-              local codecompanion = require("codecompanion")
-              -- Use the setup function to update configuration
-              codecompanion.setup({
-                strategies = {
-                  chat = { adapter = choice },
-                  inline = { adapter = choice },
-                  agent = { adapter = choice },
-                },
-              })
-            end
-          end)
-        end,
-        desc = "Code Companion - Switch adapter",
-      },
-      -- {
-      --   mapping_key_prefix .. "o",
-      --   function()
-      --     local models = {
-      --       "gemma3:12b",
-      --       "llama3:latest",
-      --     }
-      --     vim.ui.select(models, { prompt = "Select Ollama model" }, function(choice)
-      --       if choice then
-      --         local codecompanion = require("codecompanion")
-      --         codecompanion.setup({
-      --           adapters = {
-      --             ollama = function()
-      --               return require("codecompanion.adapters").extend("ollama", {
-      --                 schema = {
-      --                   model = {
-      --                     default = choice,
-      --                   },
-      --                 },
-      --               })
-      --             end,
-      --           },
-      --         })
-      --       end
-      --     end)
-      --   end,
-      --   desc = "Code Companion - Switch Ollama model",
-      -- },
       -- Recommend setup
       {
         mapping_key_prefix .. "c",
@@ -628,6 +541,7 @@ return {
         mapping_key_prefix .. "M",
         "<cmd>CodeCompanion /commit<cr>",
         desc = "Code Companion - Git commit message",
+        mode = "n",
       },
       -- Custom prompts
       -- {
