@@ -1,39 +1,45 @@
 {
   "mcpServers": {
-    "github.com/modelcontextprotocol/servers/tree/main/src/time": {
-      "command": "python",
-      "args": ["-m", "mcp_server_time", "--local-timezone=Pacific/Auckland"]
+    "github.com/ahujasid/blender-mcp": {
+      "args": [
+        "blender-mcp"
+      ],
+      "command": "uvx",
+      "disabled": true
     },
     "github.com/mendableai/firecrawl-mcp-server": {
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
       "command": "npx",
+      "disabled": true,
       "env": {
         "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
-      },
-      "args": ["-y", "firecrawl-mcp"]
+      }
     },
     "github.com/modelcontextprotocol/servers/tree/main/src/filesystem": {
-      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/Users/danielchong/.dotfiles"
-      ]
-    },
-    "github.com/NightTrek/Ollama-mcp": {
-      "command": "node",
-      "env": {
-        "OLLAMA_HOST": "http://127.0.0.1:11434"
-      },
-      "disabled": false,
-      "args": ["/Users/danielchong/.mcphub/servers/ollama-mcp/build/index.js"]
+      ],
+      "command": "npx",
+      "disabled": true
     },
     "github.com/modelcontextprotocol/servers/tree/main/src/git": {
-      "command": "uvx",
-      "args": ["mcp-server-git"]
+      "args": [
+        "mcp-server-git"
+      ],
+      "command": "uvx"
     },
-    "github.com/ahujasid/blender-mcp": {
-      "command": "uvx",
-      "args": ["blender-mcp"]
+    "github.com/modelcontextprotocol/servers/tree/main/src/time": {
+      "args": [
+        "-m",
+        "mcp_server_time",
+        "--local-timezone=Pacific/Auckland"
+      ],
+      "command": "python"
     }
   },
   "nativeMCPServers": {
