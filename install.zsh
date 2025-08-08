@@ -13,7 +13,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.dotfiles/git/^README.md(.N); do
 done
 
 mkdir -p "${ZDOTDIR:-$HOME}/.config"
-ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/kitty" "${ZDOTDIR:-$HOME}/.config/kitty"
+# ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/kitty" "${ZDOTDIR:-$HOME}/.config/kitty"
 ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/nvim" "${ZDOTDIR:-$HOME}/.config/nvim"
 ln -s "${ZDOTDIR:-$HOME}/.dotfiles/config/zellij" "${ZDOTDIR:-$HOME}/.config/zellij"
 

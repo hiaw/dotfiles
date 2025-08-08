@@ -1,5 +1,5 @@
 ## cli tools
-brew "watchman"
+# brew "watchman"
 # brew "wget"
 
 ## development tools
@@ -8,7 +8,7 @@ brew "awscli"
 # brew "git"
 brew "neovim"
 # brew "cocoapods"
-brew "tmux-mem-cpu-load"
+# brew "tmux-mem-cpu-load"
 
 ## general
 # cask "firefox"
@@ -16,7 +16,7 @@ brew "tmux-mem-cpu-load"
 # cask "discord"
 cask "slack"
 # cask "1password"
-cask "rectangle"
+# cask "rectangle"
 # cask "steam"
 cask "spotify"
 # cask "vlc"
