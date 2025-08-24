@@ -6,5 +6,12 @@
 
     "messages_half_page_up": "ctrl+u",
     "messages_half_page_down": "ctrl+d"
+  },
+  "permission": {
+    "bash": {
+      "git commit": "deny",
+      "git push": "deny",
+      "supabase push": "ask"
+    }
   }
 }
