@@ -11,7 +11,8 @@
     "bash": {
       "git commit": "deny",
       "git push": "deny",
-      "supabase push": "ask"
+      "supabase push": "ask",
+      "*": "allow"
     }
   }
 }

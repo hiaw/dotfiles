@@ -3,4 +3,7 @@ description: Code review assistant
 agent: plan
 ---
 
-Review the code for best practices and suggest improvements.
+Here are the current code changes for review
+`!git status`
+
+Review the code change for best practices, security and suggest improvements.
