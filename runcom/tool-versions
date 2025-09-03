@@ -4,7 +4,7 @@ deno 2.2.6
 dotnet 6.0.421
 flutter 3.29.3-stable
 java zulu-17.50.19
-nodejs 22.11.0
+nodejs 22.19.0
 pnpm 10.11.0
 python 3.12.7 2.7.18
 ruby 3.3.0

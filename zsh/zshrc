@@ -33,6 +33,7 @@ setopt HIST_SAVE_NO_DUPS
 # alias lg='lazygit'
 # alias lz='lazygit'
 alias nv='nvim'
+alias oc='opencode'
 
 # for ZSH
 case "$OSTYPE" in
