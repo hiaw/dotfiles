@@ -31,9 +31,6 @@ case "$OSTYPE" in
   ;;
   linux*)
     # ...
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  asdf install nodejs 18.17.1
-
   npm install -g prettier typescript typescript-language-server
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)

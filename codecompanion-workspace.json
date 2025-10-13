@@ -7,11 +7,11 @@
       "name": "Neovim Configuration",
       "system_prompt": "You are assisting with Neovim configuration files. The configuration is structured with lazy.nvim as the package manager, and various plugins are organized in separate files. Help with optimizing, explaining, or troubleshooting these configurations.",
       "data": [
-        "nvim_init", 
-        "nvim_lazy", 
-        "nvim_options", 
-        "nvim_keymaps", 
-        "nvim_autocmds", 
+        "nvim_init",
+        "nvim_lazy",
+        "nvim_options",
+        "nvim_keymaps",
+        "nvim_autocmds",
         "nvim_plugins"
       ]
     },
@@ -19,53 +19,44 @@
       "name": "Zsh Configuration",
       "system_prompt": "You are assisting with Zsh shell configuration using Prezto framework. Help with shell customization, environment variables, aliases, and functions.",
       "data": [
-        "zsh_zshrc", 
-        "zsh_zpreztorc", 
-        "zsh_zshenv", 
-        "zsh_zprofile", 
-        "zsh_zlogin", 
+        "zsh_zshrc",
+        "zsh_zpreztorc",
+        "zsh_zshenv",
+        "zsh_zprofile",
+        "zsh_zlogin",
         "zsh_zlogout"
       ]
     },
     {
       "name": "Installation Scripts",
       "system_prompt": "You are assisting with installation scripts that set up the dotfiles and install required software. Help with improving, explaining, or troubleshooting these scripts.",
-      "data": [
-        "install_script", 
-        "brew_script", 
-        "brew_file", 
-        "main_install"
-      ]
+      "data": ["install_script", "brew_script", "brew_file", "main_install"]
     },
     {
       "name": "Terminal Tools",
       "system_prompt": "You are assisting with configuration for various terminal tools like Kitty terminal, Zellij terminal multiplexer, and other utilities. Help with optimizing or explaining these configurations.",
       "data": [
-        "kitty_config", 
-        "zellij_config", 
-        "tmux_config", 
+        "kitty_config",
+        "zellij_config",
+        "tmux_config",
         "aerospace_config"
       ]
     },
     {
       "name": "Development Tools",
-      "system_prompt": "You are assisting with configuration for development tools like ASDF version manager, Git, and code formatting tools. Help with optimizing or explaining these configurations.",
+      "system_prompt": "You are assisting with configuration for development tools like Git, and code formatting tools. Help with optimizing or explaining these configurations.",
       "data": [
-        "asdf_config", 
-        "tool_versions", 
-        "git_config", 
-        "git_ignore", 
-        "prettier_config", 
+        "tool_versions",
+        "git_config",
+        "git_ignore",
+        "prettier_config",
         "markdownlint_config"
       ]
     },
     {
       "name": "Utility Scripts",
       "system_prompt": "You are assisting with utility scripts for maintenance tasks. Help with optimizing or explaining these scripts.",
-      "data": [
-        "clean_ds_store", 
-        "clean_trash"
-      ]
+      "data": ["clean_ds_store", "clean_trash"]
     }
   ],
   "data": {
@@ -169,11 +160,6 @@
       "path": "./runcom/aerospace.toml",
       "description": "Configuration for Aerospace window manager"
     },
-    "asdf_config": {
-      "type": "file",
-      "path": "./runcom/asdfrc",
-      "description": "Configuration for ASDF version manager"
-    },
     "tool_versions": {
       "type": "file",
       "path": "./runcom/tool-versions",
@@ -211,3 +197,4 @@
     }
   }
 }
+

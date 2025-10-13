@@ -3,7 +3,6 @@
 # brew "wget"
 
 ## development tools
-brew "asdf"
 brew "awscli"
 # brew "git"
 brew "neovim"
