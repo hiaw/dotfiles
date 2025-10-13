@@ -84,6 +84,16 @@ export PATH=$HOME/Documents/flutter/ff_flutter_sdk/flutter/bin/:$PATH
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
+export CC="ccache clang"
+export CXX="ccache clang++"
+export PATH="$(brew --prefix)/opt/ccache/libexec:${PATH}"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
+export ANDROID_HOME=$HOME/Library/Android/sdk 
+export PATH=$PATH:$ANDROID_HOME/emulator 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # CLAUDE_CODE
 # export CLAUDE_CODE_USE_BEDROCK=1
 # export DISABLE_PROMPT_CACHING=1
@@ -101,3 +111,4 @@ if [ -f '/Users/danielchong/Downloads/google-cloud-sdk/completion.zsh.inc' ]; th
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+eval "$(mise activate zsh)"
