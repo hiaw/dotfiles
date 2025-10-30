@@ -1,5 +1,7 @@
 [tools]
 bun = "latest"
-node = "22"
+node = "24"
+"npm:@github/copilot" = "latest"
 "npm:eas-cli" = "latest"
+"npm:mcp-hub" = "latest"
 "npm:nx" = "latest"
