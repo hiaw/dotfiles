@@ -169,7 +169,7 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocusOrTab "right"; }
     }
     shared_except "locked" "scroll" "search" "tmux" {
-        bind "Ctrl b" { SwitchToMode "tmux"; }
+        // bind "Ctrl b" { SwitchToMode "tmux"; }
     }
     shared_except "locked" "scroll" "search" {
         bind "Ctrl e" { SwitchToMode "scroll"; }
@@ -237,7 +237,7 @@ keybinds clear-defaults=true {
         bind "%" { NewPane "right"; SwitchToMode "normal"; }
         bind "," { SwitchToMode "renametab"; }
         bind "[" { SwitchToMode "scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "normal"; }
+        // bind "Ctrl b" { Write 2; SwitchToMode "normal"; }
         bind "c" { NewTab; SwitchToMode "normal"; }
         bind "h" { MoveFocus "left"; SwitchToMode "normal"; }
         bind "j" { MoveFocus "down"; SwitchToMode "normal"; }
