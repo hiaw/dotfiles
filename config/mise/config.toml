@@ -2,6 +2,8 @@
 bun = "latest"
 node = "24"
 "npm:@github/copilot" = "latest"
+"npm:@google/jules" = "latest"
 "npm:eas-cli" = "latest"
+"npm:jules" = "latest"
 "npm:mcp-hub" = "latest"
 "npm:nx" = "latest"
