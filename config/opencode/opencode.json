@@ -222,11 +222,27 @@
               }
             }
           }
+        },
+        "gemini-3-flash-preview": {
+          "options": {
+            "thinkingConfig": {
+              "thinkingLevel": "high",
+              "includeThoughts": true
+            }
+          }
+        },
+        "gemini-3-pro-preview": {
+          "options": {
+            "thinkingConfig": {
+              "thinkingLevel": "high",
+              "includeThoughts": true
+            }
+          }
         }
       }
     }
   },
-  "model": "antigravity/claude-opus-4-5",
+  "model": "google/antigravity-claude-opus-4-5-thinking",
   "small_model": "github-copilot/gpt-4.1",
   "keybinds": {
     "leader": "ctrl+l",
@@ -256,5 +272,9 @@
       }
     }
   },
-  "plugin": ["oh-my-opencode@latest", "opencode-antigravity-auth@1.4.3"]
+  "plugin": [
+    "oh-my-opencode@latest",
+    "opencode-antigravity-auth@1.4.3",
+    "opencode-gemini-auth@latest"
+  ]
 }

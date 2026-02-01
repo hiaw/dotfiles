@@ -2,14 +2,14 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "google/antigravity-gemini-3-pro"
+      "model": "google/antigravity-claude-sonnet-4-5-thinking"
     },
     "oracle": {
       "model": "google/antigravity-gemini-3-pro",
       "variant": "high"
     },
     "librarian": {
-      "model": "opencode/glm-4.7-free"
+      "model": "google/antigravity-claude-sonnet-4-5-thinking"
     },
     "explore": {
       "model": "opencode/gpt-5-nano"
@@ -18,19 +18,19 @@
       "model": "google/antigravity-gemini-3-flash"
     },
     "prometheus": {
-      "model": "google/antigravity-gemini-3-pro",
-      "variant": "high"
+      "model": "antigravity-claude-opus-4-5-thinking",
+      "variant": "max"
     },
     "metis": {
-      "model": "google/antigravity-gemini-3-pro",
-      "variant": "high"
+      "model": "antigravity-claude-opus-4-5-thinking",
+      "variant": "max"
     },
     "momus": {
       "model": "google/antigravity-gemini-3-pro",
       "variant": "high"
     },
     "atlas": {
-      "model": "google/antigravity-gemini-3-pro"
+      "model": "google/antigravity-claude-sonnet-4-5"
     }
   },
   "categories": {
