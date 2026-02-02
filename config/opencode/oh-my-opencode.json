@@ -18,11 +18,11 @@
       "model": "google/antigravity-gemini-3-flash"
     },
     "prometheus": {
-      "model": "antigravity-claude-opus-4-5-thinking",
+      "model": "google/antigravity-claude-opus-4-5-thinking",
       "variant": "max"
     },
     "metis": {
-      "model": "antigravity-claude-opus-4-5-thinking",
+      "model": "google/antigravity-claude-opus-4-5-thinking",
       "variant": "max"
     },
     "momus": {
