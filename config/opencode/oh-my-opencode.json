@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "google/antigravity-claude-sonnet-4-5-thinking"
+      "model": "opencode/kimi-k2.5-free"
     },
     "oracle": {
       "model": "google/antigravity-gemini-3-pro",
@@ -22,12 +22,11 @@
       "variant": "max"
     },
     "metis": {
-      "model": "google/antigravity-claude-opus-4-5-thinking",
-      "variant": "max"
+      "model": "opencode/kimi-k2.5-free"
     },
     "momus": {
-      "model": "google/antigravity-gemini-3-pro",
-      "variant": "high"
+      "model": "google/antigravity-claude-opus-4-5-thinking",
+      "variant": "max"
     },
     "atlas": {
       "model": "google/antigravity-claude-sonnet-4-5"
