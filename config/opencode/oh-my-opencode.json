@@ -61,5 +61,10 @@
     "writing": {
       "model": "google/antigravity-gemini-3-flash"
     }
+  },
+  "sisyphus_agent": {
+    "disabled": false,
+    "default_builder_enabled": true,
+    "replace_plan": false
   }
 }
