@@ -1,126 +1,9 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "provider": {
-    "github-copilot": {
-      "models": {
-        "claude-opus-4.5": {
-          "variants": {
-            "max": {
-              "thinking": {
-                "type": "enabled",
-                "budgetTokens": 31999
-              }
-            }
-          }
-        }
-      }
-    },
-    "llm-proxy": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Proxy",
-      "options": {
-        "baseURL": "http://127.0.0.1:8000/v1",
-        "apiKey": "VerysecretKey",
-        "timeout": 300000
-      },
-      "models": {
-        "claude-opus-4-5-thinking": {
-          "id": "antigravity/claude-opus-4-5",
-          "name": "Claude Opus 4.5 Thinking",
-          "limit": {
-            "context": 200000,
-            "output": 32000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "claude-sonnet-4-5-thinking": {
-          "id": "antigravity/claude-sonnet-4-5",
-          "name": "Claude Sonnet 4.5 Thinking",
-          "limit": {
-            "context": 200000,
-            "output": 32000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "claude-sonnet-4-5": {
-          "id": "antigravity/claude-sonnet-4-5",
-          "name": "Claude Sonnet 4.5",
-          "limit": {
-            "context": 200000,
-            "output": 8000
-          },
-          "reasoning": false,
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "ant_gemini-3-pro-high": {
-          "id": "antigravity/gemini-3-pro-preview",
-          "name": "ANT Gemini 3 Pro High",
-          "limit": {
-            "context": 1048576,
-            "output": 64000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "ant_gemini-3-pro-low": {
-          "id": "antigravity/gemini-3-pro-preview",
-          "name": "ANT Gemini 3 Pro Low",
-          "limit": {
-            "context": 1048576,
-            "output": 64000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "low"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "cli_gemini-3-pro-high": {
-          "id": "gemini_cli/gemini-3-pro-preview",
-          "name": "CLI Gemini 3 Pro High",
-          "limit": {
-            "context": 1048576,
-            "output": 64000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        }
-      }
-    },
     "google": {
       "name": "Google",
+      "npm": "@ai-sdk/google",
       "models": {
         "antigravity-gemini-3-pro": {
           "name": "Gemini 3 Pro (Antigravity)",
@@ -222,27 +105,11 @@
               }
             }
           }
-        },
-        "gemini-3-flash-preview": {
-          "options": {
-            "thinkingConfig": {
-              "thinkingLevel": "high",
-              "includeThoughts": true
-            }
-          }
-        },
-        "gemini-3-pro-preview": {
-          "options": {
-            "thinkingConfig": {
-              "thinkingLevel": "high",
-              "includeThoughts": true
-            }
-          }
         }
       }
     }
   },
-  "model": "google/antigravity-claude-opus-4-5-thinking",
+  "model": "google/gemini-3-flash-preview",
   "small_model": "github-copilot/gpt-4.1",
   "keybinds": {
     "leader": "ctrl+l",
@@ -272,5 +139,5 @@
       }
     }
   },
-  "plugin": ["oh-my-opencode@latest", "opencode-antigravity-auth@1.4.3"]
+  "plugin": ["oh-my-opencode@latest", "opencode-antigravity-auth@beta"]
 }

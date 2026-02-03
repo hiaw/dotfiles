@@ -1,11 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "google_auth": false,
   "agents": {
     "sisyphus": {
       "model": "opencode/kimi-k2.5-free"
     },
     "oracle": {
-      "model": "google/antigravity-gemini-3-pro",
+      "model": "google/gemini-3-pro-preview",
       "variant": "high"
     },
     "librarian": {
