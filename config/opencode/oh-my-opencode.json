@@ -38,7 +38,7 @@
       "model": "google/antigravity-gemini-3-pro"
     },
     "ultrabrain": {
-      "model": "google/antigravity-gemini-3-pro",
+      "model": "google/gemini-2.5-pro",
       "variant": "high"
     },
     "deep": {
@@ -46,20 +46,20 @@
       "variant": "high"
     },
     "artistry": {
-      "model": "google/antigravity-gemini-3-pro",
+      "model": "google/gemini-3-pro-preview",
       "variant": "high"
     },
     "quick": {
-      "model": "google/antigravity-gemini-3-flash"
+      "model": "google/gemini-3-flash-preview"
     },
     "unspecified-low": {
-      "model": "google/antigravity-gemini-3-flash"
+      "model": "google/gemini-3-flash-preview"
     },
     "unspecified-high": {
       "model": "google/antigravity-gemini-3-flash"
     },
     "writing": {
-      "model": "google/antigravity-gemini-3-flash"
+      "model": "google/gemini-3-flash-preview"
     }
   },
   "sisyphus_agent": {
