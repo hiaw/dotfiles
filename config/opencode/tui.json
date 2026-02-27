@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "keybinds": {
+    "leader": "ctrl+l",
+    "command_list": "ctrl+k",
+    "variant_cycle": "alt+v",
+    "messages_half_page_up": "ctrl+u",
+    "messages_half_page_down": "ctrl+d",
+    "session_child_cycle": "ctrl+alt+right",
+    "session_child_cycle_reverse": "ctrl+alt+left"
+  }
+}

@@ -95,3 +95,26 @@ export PATH="/Users/danielchong/.antigravity/antigravity/bin:$PATH"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+source $(brew --prefix)/opt/fzf/shell/completion.zsh
+
+# Make fzf use fd for the default search
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude node_modules'
+
+# Apply it to ctrl-T (if you use that shortcut)
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Apply it to the **<TAB> completion you were just using
+_fzf_compgen_path() {
+  fd --hidden --exclude .git --exclude node_modules . "$1"
+}
+
+# Apply it to directory completion like `cd **<TAB>`
+_fzf_compgen_dir() {
+  fd --type d --hidden --exclude .git --exclude node_modules . "$1"
+}
+
+# Set up fzf to use bat for file previews on ctrl-T
+# (If you are on Ubuntu/Debian, change 'bat' to 'batcat' in the line below)
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"

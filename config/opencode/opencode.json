@@ -111,13 +111,6 @@
   },
   "model": "google/gemini-3-flash-preview",
   "small_model": "github-copilot/gpt-4.1",
-  "keybinds": {
-    "leader": "ctrl+l",
-    "command_list": "ctrl+k",
-    "variant_cycle": "alt+v",
-    "messages_half_page_up": "ctrl+u",
-    "messages_half_page_down": "ctrl+d"
-  },
   "permission": {
     "bash": {
       "git *": "ask",
