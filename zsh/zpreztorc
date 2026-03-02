@@ -24,24 +24,24 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-       'directory' \
-       'utility' \
-       'completion' \
-       'git' \
-       'prompt' \
-       'syntax-highlighting' \
-       'history-substring-search' \
-       'environment' \
-       'terminal' \
-       'editor' \
-       'history' \
-       'spectrum' \
-       'homebrew' \
-       'osx' \
-       'node' \
-       'python' \
-       'syntax-highlighting' \
-       # 'autosuggestions' \
+      'environment' \
+      'terminal' \
+      'editor' \
+      'history' \
+      'directory' \
+      'utility' \
+      'git' \
+      'archive' \
+      'prompt' \
+      'completion' \
+      'syntax-highlighting' \
+      'history-substring-search' \
+      'autosuggestions'
+       # 'spectrum' \
+       # 'homebrew' \
+       # 'osx' \
+       # 'node' \
+       # 'python' \
 
 #
 # Autosuggestions
@@ -58,7 +58,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -133,10 +133,10 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
 #   'line' \
 #   'cursor' \
 #   'root'
