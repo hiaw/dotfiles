@@ -118,3 +118,8 @@ _fzf_compgen_dir() {
 # Set up fzf to use bat for file previews on ctrl-T
 # (If you are on Ubuntu/Debian, change 'bat' to 'batcat' in the line below)
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+# Added by Antigravity
+export PATH="/Users/danielchong/.antigravity/antigravity/bin:$PATH"
