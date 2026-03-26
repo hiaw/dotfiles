@@ -10,39 +10,38 @@
       "variant": "high"
     },
     "librarian": {
-      "model": "google/antigravity-claude-sonnet-4-5-thinking"
+      "model": "google/gemini-3-pro-preview"
     },
     "explore": {
       "model": "opencode/gpt-5-nano"
     },
     "multimodal-looker": {
-      "model": "google/antigravity-gemini-3-flash"
+      "model": "google/gemini-3-flash-preview"
     },
     "prometheus": {
-      "model": "google/antigravity-claude-opus-4-6-thinking",
-      "variant": "max"
+      "model": "google/gemini-3-pro-preview"
     },
     "metis": {
       "model": "opencode/kimi-k2.5-free"
     },
     "momus": {
-      "model": "google/antigravity-claude-opus-4-6-thinking",
+      "model": "google/gemini-3-pro-preview",
       "variant": "max"
     },
     "atlas": {
-      "model": "google/antigravity-claude-sonnet-4-6"
+      "model": "google/gemini-3-pro-preview"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/antigravity-gemini-3-pro"
+      "model": "google/gemini-3-pro-preview"
     },
     "ultrabrain": {
       "model": "google/gemini-2.5-pro",
       "variant": "high"
     },
     "deep": {
-      "model": "google/antigravity-gemini-3-pro",
+      "model": "google/gemini-3-pro-preview",
       "variant": "high"
     },
     "artistry": {
@@ -56,7 +55,7 @@
       "model": "google/gemini-3-flash-preview"
     },
     "unspecified-high": {
-      "model": "google/antigravity-gemini-3-flash"
+      "model": "google/gemini-3-flash-preview"
     },
     "writing": {
       "model": "google/gemini-3-flash-preview"
