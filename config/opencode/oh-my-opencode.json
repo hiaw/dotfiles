@@ -6,59 +6,59 @@
       "model": "opencode/minimax-m2.5-free"
     },
     "oracle": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/gemini-3.1-pro-preview",
       "variant": "high"
     },
     "librarian": {
-      "model": "google/gemini-3-pro-preview"
+      "model": "google/gemini-3.1-pro-preview"
     },
     "explore": {
       "model": "opencode/gpt-5-nano"
     },
     "multimodal-looker": {
-      "model": "google/gemini-3-flash-preview"
+      "model": "google/gemini-3.1-flash-lite-preview"
     },
     "prometheus": {
-      "model": "google/gemini-3-pro-preview"
+      "model": "google/gemini-3.1-pro-preview"
     },
     "metis": {
       "model": "opencode/kimi-k2.5-free"
     },
     "momus": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/gemini-3.1-pro-preview",
       "variant": "max"
     },
     "atlas": {
-      "model": "google/gemini-3-pro-preview"
+      "model": "google/gemini-3.1-pro-preview"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/gemini-3-pro-preview"
+      "model": "google/gemini-3.1-pro-preview"
     },
     "ultrabrain": {
-      "model": "google/gemini-2.5-pro",
+      "model": "google/gemini-3.1-pro-preview",
       "variant": "high"
     },
     "deep": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/gemini-3.1-pro-preview",
       "variant": "high"
     },
     "artistry": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/gemini-3.1-pro-preview",
       "variant": "high"
     },
     "quick": {
-      "model": "google/gemini-3-flash-preview"
+      "model": "google/gemini-3.1-flash-lite-preview"
     },
     "unspecified-low": {
-      "model": "google/gemini-3-flash-preview"
+      "model": "google/gemini-3.1-flash-lite-preview"
     },
     "unspecified-high": {
-      "model": "google/gemini-3-flash-preview"
+      "model": "google/gemini-3.1-flash-lite-preview"
     },
     "writing": {
-      "model": "google/gemini-3-flash-preview"
+      "model": "google/gemini-3.1-flash-lite-preview"
     }
   },
   "sisyphus_agent": {
