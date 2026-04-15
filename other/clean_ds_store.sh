@@ -1,4 +1,1 @@
-rm -rf .DS_Store
-rm -rf */.DS_Store
-rm -rf */*/.DS_Store
-rm -rf */*/*/.DS_Store
+find . -name '.DS_Store' -type f -delete
