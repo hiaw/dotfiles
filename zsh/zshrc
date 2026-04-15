@@ -14,6 +14,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Local secrets (API keys, tokens) - not committed to git
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
 # Customize to your needs...
 export PNPM_HOME="${ZDOTDIR:-$HOME}/.local/share/pnpm"
 export HOMEBREW_PREFIX="/opt/homebrew";
