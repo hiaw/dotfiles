@@ -11,5 +11,14 @@
         "enabled": true
       }
     }
+  },
+  "lspconfig": {
+    "rust_analyzer": {
+      "rust-analyzer.rustfmt.overrideCommand": [
+        "leptosfmt",
+        "--stdin",
+        "--rustfmt"
+      ]
+    }
   }
 }

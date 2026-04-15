@@ -19,6 +19,16 @@
 	trustExitCode = true
 [fetch]
 	prune = true
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[alias]
+	co = checkout
+	st = status
+	lg = log --oneline --graph --decorate --all
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
