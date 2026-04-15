@@ -368,8 +368,8 @@ pane_frames false
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
-// copy_command "pbcopy"
- 
+copy_command "pbcopy"
+
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
 // Does not apply when using copy_command.
@@ -460,9 +460,9 @@ pane_frames false
 // Whether to show tips on startup
 // Default: true
 // 
-// show_startup_tips false
- 
+show_startup_tips false
+
 // Whether to show release notes on first version run
 // Default: true
 // 
-// show_release_notes false
+show_release_notes false

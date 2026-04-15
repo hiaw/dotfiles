@@ -1,15 +1,11 @@
 return {
   {
-    "phaazon/hop.nvim",
-    lazy = false,
-    vscode = true,
+    "smoka7/hop.nvim",
     keys = {
       { ",", "<cmd>HopWord<CR>", desc = "Hop word" },
     },
-    config = function()
-      require("hop").setup({
-        case_insensitive = false,
-      })
-    end,
+    opts = {
+      case_insensitive = false,
+    },
   },
 }

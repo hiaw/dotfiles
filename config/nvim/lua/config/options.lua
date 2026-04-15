@@ -20,7 +20,6 @@ vim.opt.swapfile = false -- Disable swap files
 vim.opt.backup = false -- Disable backup files
 
 -- Better performance
-vim.opt.regexpengine = 1 -- Use old regex engine (often faster)
 vim.opt.synmaxcol = 300 -- Limit syntax highlighting for long lines
 
 -- Better editing experience

@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
         vim.list_extend(opts.ensure_installed, {
@@ -18,7 +19,6 @@ return {
           "yaml",
         })
       end
-      -- Enable additional features
       opts.highlight = { enable = true, additional_vim_regex_highlighting = false }
       opts.indent = { enable = true }
       opts.incremental_selection = {
@@ -30,15 +30,7 @@ return {
           node_decremental = "<C-backspace>",
         },
       }
-    end,
-  },
-  
-  -- Better text objects
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    opts = {
-      textobjects = {
+      opts.textobjects = {
         select = {
           enable = true,
           lookahead = true,
@@ -49,7 +41,7 @@ return {
             ["ic"] = "@class.inner",
           },
         },
-      },
-    },
+      }
+    end,
   },
 }
