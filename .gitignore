@@ -1,5 +1,6 @@
 npm-debug.log
 *.lock.json
+*.bak
 config/mcphub/.env
 .opencode
 /zsh/zshrc.local
