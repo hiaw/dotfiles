@@ -1,0 +1,36 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "github-copilot/claude-sonnet-4.6",
+  "small_model": "github-copilot/gpt-4.1",
+  "permission": {
+    "bash": {
+      "git *": "ask",
+      "*": "allow",
+    },
+    "edit": "allow",
+    "webfetch": "allow",
+  },
+  "plugin": ["oh-my-openagent@latest"],
+  "mcp": {
+    "figma": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp",
+      "enabled": false,
+    },
+    "opencode-tools": {
+      "type": "local",
+      "command": [
+        "bun",
+        "run",
+        "/Users/danielchong/Development/clearpoint/opencode-experience-engineering/mcp.ts",
+      ],
+      "environment": {
+        "ATLASSIAN_USERNAME": "${ATLASSIAN_USERNAME}",
+        "ATLASSIAN_PASSWORD": "${ATLASSIAN_PASSWORD}",
+        "DATADOG_API_KEY": "${DATADOG_API_KEY}",
+        "DATADOG_APP_KEY": "${DATADOG_APP_KEY}",
+        "FIGMA_PAT": "${FIGMA_PAT}",
+      },
+    },
+  },
+}
