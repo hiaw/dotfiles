@@ -21,5 +21,7 @@
       }
     }
   },
+  "model": "openrouter/minimax/minimax-m2.7",
+  "small_model": "openrouter/qwen/qwen3.5-flash-02-23",
   "plugin": ["oh-my-openagent@latest"]
 }
