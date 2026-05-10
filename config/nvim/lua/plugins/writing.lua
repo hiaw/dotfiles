@@ -1,3 +1,7 @@
+local obsidian_vault = vim.fn.expand("~/Sync/vault")
+local has_obsidian_vault = vim.uv.fs_stat(obsidian_vault) ~= nil
+local is_macos = vim.uv.os_uname().sysname == "Darwin"
+
 return {
   {
     "folke/zen-mode.nvim",
@@ -24,6 +28,7 @@ return {
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
+    enabled = is_macos and has_obsidian_vault,
     lazy = true,
     ft = "markdown",
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -44,7 +49,7 @@ return {
       workspaces = {
         {
           name = "Default",
-          path = "~/Sync/vault",
+          path = obsidian_vault,
         },
       },
 
