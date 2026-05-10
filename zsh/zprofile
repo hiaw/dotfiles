@@ -1,6 +1,7 @@
 
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh"
+# Kiro/Fig shell integration wraps prompt and zle startup; disabled because it
+# caused duplicated/interleaved input after restart.
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh"
 
 #
 # Executes commands at login pre-zshrc.
@@ -83,5 +84,5 @@ export PATH="$PATH:${ZDOTDIR:-$HOME}/.local/bin"
 
 
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"
+# Kiro CLI post block disabled with the pre block above.
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"

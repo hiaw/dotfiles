@@ -1,6 +1,7 @@
 
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+# Kiro/Fig shell integration wraps zle widgets and prompt redraw. After a
+# restart this caused duplicated/interleaved input in plain zsh, so keep it off.
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
 #
 # Executes commands at the start of an interactive session.
@@ -9,10 +10,16 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Avoid repeated autosuggestion widget rebinding on every prompt redraw.
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# Synchronous suggestions are less prone to redraw races in terminal emulators.
+unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 # Local secrets (API keys, tokens) - not committed to git
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
@@ -96,19 +103,25 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/D
 # Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
+source_fzf_zsh() {
+  # fzf's zsh scripts restore the special `zle` option and zsh prints a
+  # harmless warning for it. Filter only that known warning during startup.
+  source "$1" 2> >(command grep -v "can't change option: zle" >&2)
+}
+
 # 1. AlmaLinux / RHEL standard package manager (dnf) paths
 if [[ -f "/usr/share/fzf/shell/key-bindings.zsh" ]]; then
-  source "/usr/share/fzf/shell/key-bindings.zsh"
-  source "/usr/share/fzf/shell/completion.zsh"
+  source_fzf_zsh "/usr/share/fzf/shell/key-bindings.zsh"
+  source_fzf_zsh "/usr/share/fzf/shell/completion.zsh"
 
 # 2. Manual Git installation path (if you ran the ~/.fzf/install script)
 elif [[ -f "$HOME/.fzf.zsh" ]]; then
-  source "$HOME/.fzf.zsh"
+  source_fzf_zsh "$HOME/.fzf.zsh"
 
 # 3. macOS / Homebrew paths
 elif [[ -n "$HOMEBREW_PREFIX" ]] && [[ -f "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh" ]]; then
-  source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
-  source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"
+  source_fzf_zsh "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+  source_fzf_zsh "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"
 fi
 
 # Make fzf use fd for the default search
@@ -133,5 +146,5 @@ export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-ran
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+# Kiro CLI post block disabled with the pre block above.
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

@@ -300,6 +300,12 @@ default_mode "normal"
 // Choose the path to override cwd that zellij will use for opening new panes
 // 
 // default_cwd "/tmp"
+
+// Keep shells inside Zellij on a widely-supported terminfo entry. This avoids
+// stale `TERM=wezterm` state causing zsh/readline redraw corruption in panes.
+env {
+    TERM "xterm-256color"
+}
  
 // The name of the default layout to load on startup
 // Default: "default"
@@ -413,7 +419,8 @@ copy_command "pbcopy"
 //   - true (default)
 //   - false
 // 
-// session_serialization false
+// Avoid resurrecting panes with stale terminal/protocol state after restarts.
+session_serialization false
  
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
@@ -450,7 +457,9 @@ copy_command "pbcopy"
 // (Requires restart)
 // Default: true (if the host terminal supports it)
 // 
-// support_kitty_keyboard_protocol false
+// WezTerm does not need Zellij's Kitty keyboard protocol path here; keeping it
+// off avoids duplicated/interleaved zsh input when TERM/protocol state is stale.
+support_kitty_keyboard_protocol false
  
 // Whether to stack panes when resizing beyond a certain size
 // Default: true
