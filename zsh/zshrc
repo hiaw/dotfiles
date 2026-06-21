@@ -24,17 +24,6 @@ unset ZSH_AUTOSUGGEST_USE_ASYNC
 # Local secrets (API keys, tokens) - not committed to git
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
-# Customize to your needs...
-export PNPM_HOME="${ZDOTDIR:-$HOME}/.local/share/pnpm"
-if [[ "$OSTYPE" == darwin* ]] && [[ -d "/opt/homebrew" ]]; then
-  export HOMEBREW_PREFIX="/opt/homebrew"
-  export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-  export HOMEBREW_REPOSITORY="/opt/homebrew"
-  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
-  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
-  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
-fi
-
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -51,47 +40,11 @@ alias oc='opencode'
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
-# pnpm
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# sst
-export PATH=$HOME/.sst/bin:$PATH
-
-export PATH=$HOME/Documents/flutter/ff_flutter_sdk/flutter/bin/:$PATH
-
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-if [[ "$OSTYPE" == darwin* ]] && command -v ccache >/dev/null 2>&1 && command -v clang >/dev/null 2>&1; then
-  export CC="ccache clang"
-  export CXX="ccache clang++"
-
-  if [[ -d "$HOMEBREW_PREFIX/opt/ccache/libexec" ]]; then
-    export PATH="$HOMEBREW_PREFIX/opt/ccache/libexec:${PATH}"
-  fi
-fi
-
-if [[ "$OSTYPE" == darwin* ]] && [[ -d "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home" ]]; then
-  export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-fi
-
 # CLAUDE_CODE
 # export CLAUDE_CODE_USE_BEDROCK=1
 # export DISABLE_PROMPT_CACHING=1
-
-# opencode
-export PATH=$HOME/.opencode/bin:$PATH
-
 eval "$(mise activate zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -99,9 +52,6 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloa
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
-
-# Added by Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 source_fzf_zsh() {
   # fzf's zsh scripts restore the special `zle` option and zsh prints a

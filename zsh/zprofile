@@ -77,6 +77,49 @@ if [[ "$OSTYPE" == darwin* ]] && [[ -x "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# PNPM
+export PNPM_HOME="${ZDOTDIR:-$HOME}/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# sst
+export PATH=$HOME/.sst/bin:$PATH
+
+# Flutter
+export PATH=$HOME/Documents/flutter/ff_flutter_sdk/flutter/bin/:$PATH
+
+# Dart pub cache
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH
+
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# LM Studio
+export PATH="$PATH:/Users/danielchong/.lmstudio/bin"
+
+# ccache
+if [[ "$OSTYPE" == darwin* ]] && command -v ccache >/dev/null 2>&1 && command -v clang >/dev/null 2>&1; then
+  export CC="ccache clang"
+  export CXX="ccache clang++"
+  if [[ -d "$HOMEBREW_PREFIX/opt/ccache/libexec" ]]; then
+    export PATH="$HOMEBREW_PREFIX/opt/ccache/libexec:${PATH}"
+  fi
+fi
+
+# Java
+if [[ "$OSTYPE" == darwin* ]] && [[ -d "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home" ]]; then
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+fi
+
 export AWS_SDK_LOAD_CONFIG=1
 
 # Created by `pipx` on 2023-11-08 00:49:01
@@ -86,3 +129,5 @@ export PATH="$PATH:${ZDOTDIR:-$HOME}/.local/bin"
 
 # Kiro CLI post block disabled with the pre block above.
 # [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"
+
+
