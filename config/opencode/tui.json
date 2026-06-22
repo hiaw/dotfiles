@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
+  "plugin": ["oh-my-openagent@latest"],
   "keybinds": {
     "leader": "ctrl+l",
     "command_list": "ctrl+k",
