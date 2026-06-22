@@ -11,7 +11,7 @@
       "model": "opencode-go/glm-5.2"
     },
     "explore": {
-      "model": "opencode-go/qwen3.7-plus"
+      "model": "opencode-go/deepseek-v4-flash"
     },
     "multimodal-looker": {
       "model": "opencode-go/kimi-k2.7-code"
@@ -26,18 +26,18 @@
       "model": "opencode-go/glm-5.2"
     },
     "atlas": {
-      "model": "opencode-go/kimi-k2.7-code"
+      "model": "opencode-go/qwen3.7-plus"
     },
     "sisyphus-junior": {
-      "model": "opencode-go/kimi-k2.7-code"
+      "model": "opencode-go/qwen3.7-plus"
     },
     "librarian": {
-      "model": "opencode-go/qwen3.7-plus"
+      "model": "opencode-go/deepseek-v4-flash"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "opencode-go/glm-5.2"
+      "model": "opencode-go/qwen3.7-plus"
     },
     "ultrabrain": {
       "model": "opencode-go/glm-5.2"
@@ -46,19 +46,19 @@
       "model": "opencode-go/kimi-k2.7-code"
     },
     "artistry": {
-      "model": "opencode-go/kimi-k2.7-code"
+      "model": "opencode-go/qwen3.7-plus"
     },
     "quick": {
-      "model": "opencode-go/minimax-m3"
+      "model": "opencode-go/mimo-v2.5"
     },
     "unspecified-low": {
-      "model": "opencode-go/kimi-k2.7-code"
+      "model": "opencode-go/minimax-m3"
     },
     "unspecified-high": {
       "model": "opencode-go/glm-5.2"
     },
     "writing": {
-      "model": "opencode-go/kimi-k2.7-code"
+      "model": "opencode-go/qwen3.7-plus"
     }
   },
   "sisyphus_agent": {
