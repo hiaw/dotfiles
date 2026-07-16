@@ -7,21 +7,49 @@
       "*": "allow"
     },
     "edit": "allow",
-    "webfetch": "allow"
+    "webfetch": "allow",
+    "external_directory": "allow"
   },
-  "agent": {
-    "code-reviewer": {
-      "description": "Reviews code for best practices and potential issues",
-      "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-20250514",
-      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
-      "tools": {
-        "write": false,
-        "edit": false
+  "model": "zai-coding-plan/glm-4.7",
+  "plugin": ["ponytail-opencode-plugin@latest"],
+  "mcp": {
+    "zai-mcp-server": {
+      "type": "local",
+      "command": ["npx", "-y", "@z_ai/mcp-server"],
+      "environment": {
+        "Z_AI_MODE": "ZAI",
+        "Z_AI_API_KEY": "90c326986caa41b69ec1812d3c46084f.oYshwyR4qg8g2Tzi"
+      }
+    },
+    "web-search-prime": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
+      "headers": {
+        "Authorization": "Bearer 90c326986caa41b69ec1812d3c46084f.oYshwyR4qg8g2Tzi"
+      }
+    },
+    "web-reader": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_reader/mcp",
+      "headers": {
+        "Authorization": "Bearer 90c326986caa41b69ec1812d3c46084f.oYshwyR4qg8g2Tzi"
+      }
+    },
+    "zread": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/zread/mcp",
+      "headers": {
+        "Authorization": "Bearer 90c326986caa41b69ec1812d3c46084f.oYshwyR4qg8g2Tzi"
       }
     }
   },
-  "model": "openrouter/minimax/minimax-m2.7",
-  "small_model": "openrouter/qwen/qwen3.5-flash-02-23",
-  "plugin": ["oh-my-openagent@latest", "ponytail-opencode-plugin@latest"]
+  "provider": {
+    "zai-coding-plan": {
+      "options": {
+        "apiKey": "90c326986caa41b69ec1812d3c46084f.oYshwyR4qg8g2Tzi"
+      }
+    }
+  },
+  "small_model": "zai-coding-plan/glm-4.5-air"
 }
+
