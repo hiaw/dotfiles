@@ -1,7 +1,10 @@
 [tools]
 bun = "latest"
-node = "24"
+node = "24.14.1"
 "npm:@github/copilot" = "latest"
 "npm:@google/jules" = "latest"
 "npm:eas-cli" = "latest"
+"npm:nodemon" = "latest"
 "npm:nx" = "latest"
+"npm:ts-node" = "latest"
+pnpm = "10.6.2"

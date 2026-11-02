@@ -8,7 +8,7 @@
       "model": "opencode-go/glm-5.2"
     },
     "oracle": {
-      "model": "opencode-go/glm-5.2"
+      "model": "opencode-go/deepseek-v4-pro"
     },
     "explore": {
       "model": "opencode-go/deepseek-v4-flash"
@@ -17,36 +17,36 @@
       "model": "opencode-go/kimi-k2.7-code"
     },
     "prometheus": {
-      "model": "opencode-go/glm-5.2"
+      "model": "opencode-go/qwen3.7-max"
     },
     "metis": {
-      "model": "opencode-go/glm-5.2"
+      "model": "opencode-go/qwen3.7-max"
     },
     "momus": {
-      "model": "opencode-go/glm-5.2"
+      "model": "opencode-go/deepseek-v4-pro"
     },
     "atlas": {
-      "model": "opencode-go/qwen3.7-plus"
+      "model": "opencode-go/glm-5.2"
     },
     "sisyphus-junior": {
-      "model": "opencode-go/qwen3.7-plus"
+      "model": "opencode-go/minimax-m3"
     },
     "librarian": {
-      "model": "opencode-go/deepseek-v4-flash"
+      "model": "opencode-go/deepseek-v4-pro"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "opencode-go/qwen3.7-plus"
-    },
-    "ultrabrain": {
       "model": "opencode-go/glm-5.2"
     },
+    "ultrabrain": {
+      "model": "opencode-go/qwen3.7-max"
+    },
     "deep": {
-      "model": "opencode-go/kimi-k2.7-code"
+      "model": "opencode-go/glm-5.2"
     },
     "artistry": {
-      "model": "opencode-go/qwen3.7-plus"
+      "model": "opencode-go/glm-5.2"
     },
     "quick": {
       "model": "opencode-go/mimo-v2.5"
@@ -58,7 +58,7 @@
       "model": "opencode-go/glm-5.2"
     },
     "writing": {
-      "model": "opencode-go/qwen3.7-plus"
+      "model": "opencode-go/deepseek-v4-pro"
     }
   },
   "sisyphus_agent": {
