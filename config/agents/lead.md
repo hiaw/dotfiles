@@ -31,14 +31,15 @@ Create a clean worktree branching off the default branch so workers never dirty 
 mkdir -p ~/.herdr/worktrees
 git fetch origin
 git worktree add ~/.herdr/worktrees/<slug> -b fix/<slug> origin/HEAD
+```
 
+Write the clear specification, acceptance criteria, and affected files into `~/.herdr/worktrees/<slug>/.task-spec.md`.
 
-Write the clear specification, acceptance criteria, and affected files into ~/.herdr/worktrees/<slug>/.task-spec.md.
-
-Step 2: Spawn the Coder Sub-Agent (agy)
+### Step 2: Spawn the Coder Sub-Agent (`agy`)
 
 Start an unattended Antigravity worker in the background pointed at that worktree:
 
+```bash
 hc run --bg --name coder-<slug> --cwd ~/.herdr/worktrees/<slug> \
   agy --dangerously-skip-permissions -i \
   "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/coder.md")
@@ -46,14 +47,15 @@ hc run --bg --name coder-<slug> --cwd ~/.herdr/worktrees/<slug> \
 Parent Terminal ID: $HC_TERMINAL_ID
 Worktree: ~/.herdr/worktrees/<slug>
 Task: Read .task-spec.md, implement the changes, run local checks, delete .task-spec.md, commit, and report back via: hc send $HC_TERMINAL_ID"
+```
 
+_(Wait for `coder-<slug>` to report back in your input via `hc send`.)_
 
-(Wait for coder-<slug> to report back in your input via hc send.)
+### Step 3: Spawn Parallel Adversarial Review (`codex`) & QA (`agy`)
 
-Step 3: Spawn Parallel Adversarial Review (codex) & QA (agy)
+Once `coder-<slug>` reports a commit SHA, launch both the Reviewer and QA workers in parallel:
 
-Once coder-<slug> reports a commit SHA, launch both the Reviewer and QA workers in parallel:
-
+```bash
 # 1. Adversarial Code & Architecture Reviewer (Codex)
 hc run --bg --name rev-<slug> --cwd ~/.herdr/worktrees/<slug> \
   codex --yolo \
@@ -67,32 +69,47 @@ hc run --bg --name qa-<slug> --cwd ~/.herdr/worktrees/<slug> \
   "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/qa.md")
 Parent Terminal ID: $HC_TERMINAL_ID
 Run full typecheck, lint, test suite, and build. Send QA_VERDICT (APPROVED or REJECTED with error output) via: hc send $HC_TERMINAL_ID"
-
-
-Step 4: Autonomous Bounce-Back Loop (Max 3 Attempts)
-
-⚬ Wait until BOTH rev-<slug> and qa-<slug> have sent their verdicts.
-⚬ If either returns REJECTED:
-  Send the exact rejection reasons back to the existing coder-<slug> terminal:
-  hc send coder-<slug> "Review/QA rejected your commit. Fix these exact issues, amend or create a new commit, and report the new SHA to $HC_TERMINAL_ID: <paste reasons>"
-
-  When coder-<slug> finishes fixing, re-run Step 3.
-⚬ If it fails 3 times, stop and summarize the blocker for the human.
-
-Step 5: PR Creation, Auto-Merge & Cleanup
-
-Once both rev-<slug> and qa-<slug> return APPROVED:
-
-1. Push the branch and open the PR from the worktree:
-   cd ~/.herdr/worktrees/<slug>
-   git push -u origin HEAD
-   gh pr create --fill
-
-2. If this is a bugfix or marked for auto-merge:
-   gh pr merge --auto --squash --delete-branch
-
-3. Clean up the worktree and report the PR URL to the human:
-   git worktree remove ~/.herdr/worktrees/<slug>
-
-
 ```
+
+### Step 4: Autonomous Bounce-Back Loop (Max 3 Attempts)
+
+- Wait until BOTH `rev-<slug>` and `qa-<slug>` have sent their verdicts.
+- If **either** returns `REJECTED`:
+  Send the exact rejection reasons back to the existing `coder-<slug>` terminal:
+
+```bash
+hc send coder-<slug> "Review/QA rejected your commit. Fix these exact issues, amend or create a new commit, and report the new SHA to $HC_TERMINAL_ID: <paste reasons>"
+```
+
+When `coder-<slug>` finishes fixing, re-run Step 3.
+
+- If it fails 3 times, stop and summarize the blocker for the human.
+
+### Step 5: PR Creation & Conditional Auto-Merge
+
+Once **both** `rev-<slug>` and `qa-<slug>` return `APPROVED`:
+
+1. Push the branch and create the PR from the worktree:
+
+```bash
+cd ~/.herdr/worktrees/<slug>
+git push -u origin HEAD
+gh pr create --fill
+gh pr comment --body "Automated Adversarial Review (Codex) & QA (Antigravity): APPROVED"
+```
+
+2. **Evaluate Auto-Merge Eligibility:**
+   Auto-merge ONLY if ALL of the following are true:
+   - The task is a bugfix, UI polish, test addition, or small self-contained feature (less than 200 lines changed).
+   - It does NOT modify database schemas/migrations, authentication/permissions, billing, CI/CD workflows (`.github/workflows`), or environment secrets.
+
+   If eligible, merge and clean up:
+
+```bash
+gh pr merge --auto --squash --delete-branch
+cd -
+git worktree remove ~/.herdr/worktrees/<slug>
+```
+
+3. **If it touches sensitive files or exceeds scope:**
+   Leave the PR open, do NOT merge, and notify the human in your terminal with the PR URL for final sign-off.
