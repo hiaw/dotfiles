@@ -99,5 +99,12 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 # Kiro CLI post block disabled with the pre block above.
 # [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
-# Added by Antigravity IDE
-export PATH="/Users/danielchong/.antigravity-ide/antigravity-ide/bin:$PATH"
+
+export AGENTS_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/agents"
+
+# Option A: Lead running on Gemini 4 Argon (High) via Antigravity
+alias lead='agy --model gemini-4-argon --effort high --dangerously-skip-permissions -i "$(cat "$AGENTS_CONFIG_DIR/lead.md")"'
+
+# Option B: Lead running on GPT-6.1-Sol (xHigh) via Codex
+alias lead-gpt='codex --yolo -m gpt-6.1-sol -c '\''model_reasoning_effort="xhigh"'\'' "$(cat "$AGENTS_CONFIG_DIR/lead.md")"'
+

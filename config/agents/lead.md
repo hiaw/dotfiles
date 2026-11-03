@@ -19,7 +19,22 @@ Before spawning or messaging any sub-agent in this session:
   1. The product requirement is genuinely ambiguous during planning, OR
   2. A sub-agent loop fails 3 times in a row on the same issue.
 
-## 3. The Dark Factory Pipeline (Run for every approved spec or bugfix)
+## 3. Model Tier Assignment
+
+Always spawn sub-agents with these explicit model and effort flags unless the human instructs otherwise:
+
+- **Coder (`coder-<slug>`):**
+  - Default (Antigravity): `agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions`
+  - Alternate (Codex): `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"'`
+- **Adversarial Reviewer (`rev-<slug>`):**
+  - Default (Codex): `codex --yolo -m gpt-6.1-sol -c 'model_reasoning_effort="xhigh"'`
+  - Alternate (Antigravity): `agy --model gemini-4-argon --effort high --dangerously-skip-permissions`
+    _(Rule: Ensure Reviewer uses the opposite model family from Coder whenever possible)._
+- **QA Worker (`qa-<slug>`):**
+  - Default (Antigravity): `agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions`
+  - Alternate (Codex): `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"'`
+
+## 4. The Dark Factory Pipeline (Run for every approved spec or bugfix)
 
 Given a task slug `<slug>` (e.g., `fix-tab-flash`):
 
@@ -35,13 +50,13 @@ git worktree add ~/.herdr/worktrees/<slug> -b fix/<slug> origin/HEAD
 
 Write the clear specification, acceptance criteria, and affected files into `~/.herdr/worktrees/<slug>/.task-spec.md`.
 
-### Step 2: Spawn the Coder Sub-Agent (`agy`)
+### Step 2: Spawn the Coder Sub-Agent (`gemini-3.8-flash` High)
 
-Start an unattended Antigravity worker in the background pointed at that worktree:
+Start the unattended worker in the background pointed at that worktree:
 
 ```bash
 hc run --bg --name coder-<slug> --cwd ~/.herdr/worktrees/<slug> \
-  agy --dangerously-skip-permissions -i \
+  agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions -i \
   "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/coder.md")
 
 Parent Terminal ID: $HC_TERMINAL_ID
@@ -49,23 +64,25 @@ Worktree: ~/.herdr/worktrees/<slug>
 Task: Read .task-spec.md, implement the changes, run local checks, delete .task-spec.md, commit, and report back via: hc send $HC_TERMINAL_ID"
 ```
 
+_(If using `gpt-6-luna` for Coder instead, replace `agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions -i` with `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"'`)._
+
 _(Wait for `coder-<slug>` to report back in your input via `hc send`.)_
 
-### Step 3: Spawn Parallel Adversarial Review (`codex`) & QA (`agy`)
+### Step 3: Spawn Parallel Adversarial Review (`gpt-6.1-sol` xHigh) & QA (`gemini-3.8-flash` High)
 
 Once `coder-<slug>` reports a commit SHA, launch both the Reviewer and QA workers in parallel:
 
 ```bash
-# 1. Adversarial Code & Architecture Reviewer (Codex)
+# 1. Adversarial Code & Architecture Reviewer (GPT-6.1-Sol xHigh)
 hc run --bg --name rev-<slug> --cwd ~/.herdr/worktrees/<slug> \
-  codex --yolo \
+  codex --yolo -m gpt-6.1-sol -c 'model_reasoning_effort="xhigh"' \
   "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/reviewer.md")
 Parent Terminal ID: $HC_TERMINAL_ID
 Inspect git diff origin/HEAD...HEAD and send REVIEW_VERDICT (APPROVED or REJECTED with file:line reasons) via: hc send $HC_TERMINAL_ID"
 
-# 2. QA & Build Verification Worker (Antigravity)
+# 2. QA & Build Verification Worker (Gemini 3.8 Flash High)
 hc run --bg --name qa-<slug> --cwd ~/.herdr/worktrees/<slug> \
-  agy --dangerously-skip-permissions -i \
+  agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions -i \
   "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/qa.md")
 Parent Terminal ID: $HC_TERMINAL_ID
 Run full typecheck, lint, test suite, and build. Send QA_VERDICT (APPROVED or REJECTED with error output) via: hc send $HC_TERMINAL_ID"
@@ -95,7 +112,7 @@ Once **both** `rev-<slug>` and `qa-<slug>` return `APPROVED`:
 cd ~/.herdr/worktrees/<slug>
 git push -u origin HEAD
 gh pr create --fill
-gh pr comment --body "Automated Adversarial Review (Codex) & QA (Antigravity): APPROVED"
+gh pr comment --body "Automated Adversarial Review (GPT-6.1-Sol xHigh) & QA (Gemini 3.8 Flash High): APPROVED"
 ```
 
 2. **Evaluate Auto-Merge Eligibility:**
