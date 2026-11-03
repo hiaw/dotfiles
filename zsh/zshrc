@@ -102,9 +102,8 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 
 export AGENTS_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/agents"
 
-# Option A: Lead running on Gemini 4 Argon (High) via Antigravity
-alias lead='agy --model gemini-4-argon --effort high --dangerously-skip-permissions -i "$(cat "$AGENTS_CONFIG_DIR/lead.md")"'
+# Launch Lead on Antigravity (Gemini 4 Argon High)
+alias lead='agy --agent lead --model gemini-4-argon --effort high --dangerously-skip-permissions --sandbox=false -i "Initialize Dark Software Factory Lead Orchestrator."'
 
-# Option B: Lead running on GPT-6.1-Sol (xHigh) via Codex
-alias lead-gpt='codex --yolo -m gpt-6.1-sol -c '\''model_reasoning_effort="xhigh"'\'' "$(cat "$AGENTS_CONFIG_DIR/lead.md")"'
-
+# Launch Lead on Codex (GPT-6.1-Sol xHigh) using the exact same file
+alias lead-gpt='codex --yolo -m gpt-6.1-sol -c '\''model_reasoning_effort="xhigh"'\'' -c "model_instructions_file=\"$HOME/.gemini/config/agents/lead/agent.md\""'

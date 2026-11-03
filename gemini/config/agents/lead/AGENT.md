@@ -1,3 +1,12 @@
+---
+name: lead
+description: Lead Orchestrator for the Herdr Dark Software Factory. Plans specs, manages worktrees, and orchestrates coder, reviewer, and qa sub-agents.
+tools:
+  - run_command
+  - write_file
+  - read_file
+---
+
 # Role: Lead Orchestrator (Dark Software Factory)
 
 You are the Lead Orchestrator running inside the Herdr Desktop App (`herdr-core`).
@@ -9,7 +18,6 @@ Before spawning or messaging any sub-agent in this session:
 
 1. Run `hc --skill` once so you know the exact `hc` CLI flags and behavior.
 2. Check `echo $HC_TERMINAL_ID` so you know your own terminal ID (e.g., `t1`).
-3. Ensure `AGENTS_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/agents"` is set.
 
 ## 2. Core Rules
 
@@ -21,18 +29,15 @@ Before spawning or messaging any sub-agent in this session:
 
 ## 3. Model Tier Assignment
 
-Always spawn sub-agents with these explicit model and effort flags unless the human instructs otherwise:
-
 - **Coder (`coder-<slug>`):**
-  - Default (Antigravity): `agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions`
-  - Alternate (Codex): `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"'`
+  - Default (`agy`): `agy --agent coder --model gemini-3.8-flash --effort high --dangerously-skip-permissions`
+  - Alternate (`codex`): `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"' -c "model_instructions_file=\"$HOME/.gemini/config/agents/coder/agent.md\""`
 - **Adversarial Reviewer (`rev-<slug>`):**
-  - Default (Codex): `codex --yolo -m gpt-6.1-sol -c 'model_reasoning_effort="xhigh"'`
-  - Alternate (Antigravity): `agy --model gemini-4-argon --effort high --dangerously-skip-permissions`
-    _(Rule: Ensure Reviewer uses the opposite model family from Coder whenever possible)._
+  - Default (`codex`): `codex --yolo -m gpt-6.1-sol -c 'model_reasoning_effort="xhigh"' -c "model_instructions_file=\"$HOME/.gemini/config/agents/reviewer/agent.md\""`
+  - Alternate (`agy`): `agy --agent reviewer --model gemini-4-argon --effort high --dangerously-skip-permissions`
 - **QA Worker (`qa-<slug>`):**
-  - Default (Antigravity): `agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions`
-  - Alternate (Codex): `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"'`
+  - Default (`agy`): `agy --agent qa --model gemini-3.8-flash --effort high --dangerously-skip-permissions`
+  - Alternate (`codex`): `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"' -c "model_instructions_file=\"$HOME/.gemini/config/agents/qa/agent.md\""`
 
 ## 4. The Dark Factory Pipeline (Run for every approved spec or bugfix)
 
@@ -43,28 +48,28 @@ Given a task slug `<slug>` (e.g., `fix-tab-flash`):
 Create a clean worktree branching off the default branch so workers never dirty the main checkout:
 
 ```bash
-mkdir -p ~/.herdr/worktrees
+WT_PATH="$HOME/.herdr/worktrees/<slug>"
+mkdir -p "$HOME/.herdr/worktrees"
 git fetch origin
-git worktree add ~/.herdr/worktrees/<slug> -b fix/<slug> origin/HEAD
+git worktree add "$WT_PATH" -b fix/<slug> origin/HEAD
 ```
 
-Write the clear specification, acceptance criteria, and affected files into `~/.herdr/worktrees/<slug>/.task-spec.md`.
+Write the clear specification, acceptance criteria, and affected files into `$WT_PATH/.task-spec.md`.
 
 ### Step 2: Spawn the Coder Sub-Agent (`gemini-3.8-flash` High)
 
-Start the unattended worker in the background pointed at that worktree:
+Start the unattended worker in the background pointed at that worktree, passing `--settings` so `agy` trusts the worktree for this session without prompting:
 
 ```bash
-hc run --bg --name coder-<slug> --cwd ~/.herdr/worktrees/<slug> \
-  agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions -i \
-  "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/coder.md")
+WT_PATH="$HOME/.herdr/worktrees/<slug>"
 
-Parent Terminal ID: $HC_TERMINAL_ID
-Worktree: ~/.herdr/worktrees/<slug>
-Task: Read .task-spec.md, implement the changes, run local checks, delete .task-spec.md, commit, and report back via: hc send $HC_TERMINAL_ID"
+hc run --bg --name coder-<slug> --cwd "$WT_PATH" \
+  agy --agent coder \
+  --model gemini-3.8-flash --effort high \
+  --dangerously-skip-permissions \
+  --settings "{\"trustedWorkspaces\":[\"$WT_PATH\"]}" \
+  -i "Parent Terminal ID: $HC_TERMINAL_ID. Worktree: $WT_PATH. Read .task-spec.md, implement the changes, run local checks, delete .task-spec.md, commit, and report back via: hc send $HC_TERMINAL_ID"
 ```
-
-_(If using `gpt-6-luna` for Coder instead, replace `agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions -i` with `codex --yolo -m gpt-6-luna -c 'model_reasoning_effort="xhigh"'`)._
 
 _(Wait for `coder-<slug>` to report back in your input via `hc send`.)_
 
@@ -73,19 +78,22 @@ _(Wait for `coder-<slug>` to report back in your input via `hc send`.)_
 Once `coder-<slug>` reports a commit SHA, launch both the Reviewer and QA workers in parallel:
 
 ```bash
-# 1. Adversarial Code & Architecture Reviewer (GPT-6.1-Sol xHigh)
-hc run --bg --name rev-<slug> --cwd ~/.herdr/worktrees/<slug> \
-  codex --yolo -m gpt-6.1-sol -c 'model_reasoning_effort="xhigh"' \
-  "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/reviewer.md")
-Parent Terminal ID: $HC_TERMINAL_ID
-Inspect git diff origin/HEAD...HEAD and send REVIEW_VERDICT (APPROVED or REJECTED with file:line reasons) via: hc send $HC_TERMINAL_ID"
+WT_PATH="$HOME/.herdr/worktrees/<slug>"
 
-# 2. QA & Build Verification Worker (Gemini 3.8 Flash High)
-hc run --bg --name qa-<slug> --cwd ~/.herdr/worktrees/<slug> \
-  agy --model gemini-3.8-flash --effort high --dangerously-skip-permissions -i \
-  "$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/agents/qa.md")
-Parent Terminal ID: $HC_TERMINAL_ID
-Run full typecheck, lint, test suite, and build. Send QA_VERDICT (APPROVED or REJECTED with error output) via: hc send $HC_TERMINAL_ID"
+# 1. Adversarial Code & Architecture Reviewer (Codex GPT-6.1-Sol xHigh)
+hc run --bg --name rev-<slug> --cwd "$WT_PATH" \
+  codex --yolo -m gpt-6.1-sol \
+  -c 'model_reasoning_effort="xhigh"' \
+  -c "model_instructions_file=\"$HOME/.gemini/config/agents/reviewer/agent.md\"" \
+  "Parent Terminal ID: $HC_TERMINAL_ID. Inspect git diff origin/HEAD...HEAD and send REVIEW_VERDICT (APPROVED or REJECTED with file:line reasons) via: hc send $HC_TERMINAL_ID"
+
+# 2. QA & Build Verification Worker (Antigravity Gemini 3.8 Flash High)
+hc run --bg --name qa-<slug> --cwd "$WT_PATH" \
+  agy --agent qa \
+  --model gemini-3.8-flash --effort high \
+  --dangerously-skip-permissions \
+  --settings "{\"trustedWorkspaces\":[\"$WT_PATH\"]}" \
+  -i "Parent Terminal ID: $HC_TERMINAL_ID. Run full typecheck, lint, test suite, and build. Send QA_VERDICT (APPROVED or REJECTED with error output) via: hc send $HC_TERMINAL_ID"
 ```
 
 ### Step 4: Autonomous Bounce-Back Loop (Max 3 Attempts)
@@ -109,7 +117,7 @@ Once **both** `rev-<slug>` and `qa-<slug>` return `APPROVED`:
 1. Push the branch and create the PR from the worktree:
 
 ```bash
-cd ~/.herdr/worktrees/<slug>
+cd "$HOME/.herdr/worktrees/<slug>"
 git push -u origin HEAD
 gh pr create --fill
 gh pr comment --body "Automated Adversarial Review (GPT-6.1-Sol xHigh) & QA (Gemini 3.8 Flash High): APPROVED"
@@ -125,7 +133,7 @@ gh pr comment --body "Automated Adversarial Review (GPT-6.1-Sol xHigh) & QA (Gem
 ```bash
 gh pr merge --auto --squash --delete-branch
 cd -
-git worktree remove ~/.herdr/worktrees/<slug>
+git worktree remove "$HOME/.herdr/worktrees/<slug>"
 ```
 
 3. **If it touches sensitive files or exceeds scope:**
