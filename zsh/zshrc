@@ -105,5 +105,5 @@ export AGENTS_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/agents"
 # Launch Lead on Antigravity (Gemini 4 Argon High)
 alias lead-agy='agy --agent lead --model gemini-4-argon --effort high --dangerously-skip-permissions --sandbox=false -i "Initialize Dark Software Factory Lead Orchestrator."'
 
-# Launch Lead on Codex (GPT-6.1-Sol xHigh) using the exact same file
-alias lead='codex --yolo -m gpt-6.1-sol -c '\''model_reasoning_effort="xhigh"'\'' -c "model_instructions_file=\"$HOME/.gemini/config/agents/lead/agent.md\""'
+# Launch Lead on Codex (GPT-6.1-Sol high) using the exact same file
+alias lead='codex --yolo -m gpt-6.1-sol -c '\''model_reasoning_effort="high"'\'' -c "model_instructions_file=\"$HOME/.gemini/config/agents/lead/agent.md\""'

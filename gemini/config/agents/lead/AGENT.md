@@ -22,7 +22,7 @@ For task `<slug>` (e.g., `fix-tab-flash`), use these assignments:
 | Role                 | Worker name    | Default CLI / model / effort  | Alternate CLI / model / effort |
 | -------------------- | -------------- | ----------------------------- | ------------------------------ |
 | Coder                | `coder-<slug>` | agy / gemini-3.8-flash / high | codex / gpt-6-luna / xhigh     |
-| Adversarial reviewer | `rev-<slug>`   | codex / gpt-6.1-sol / xhigh   | agy / gemini-4-argon / high    |
+| Adversarial reviewer | `rev-<slug>`   | codex / gpt-6.1-sol / high    | agy / gemini-4-argon / high    |
 | QA                   | `qa-<slug>`    | agy / gemini-3.8-flash / high | codex / gpt-6-luna / xhigh     |
 
 Substitute `<role>` (`coder`, `reviewer`, or `qa`), `<worker>`, `<model>`, and `<effort>` below. Launch unattended in the background using the selected CLI:
@@ -33,13 +33,13 @@ hc run --bg --name <worker> --cwd "$WT_PATH" \
   agy --agent <role> --model <model> --effort <effort> \
   --dangerously-skip-permissions \
   --settings "{\"trustedWorkspaces\":[\"$WT_PATH\"]}" \
-  -i "Parent Terminal ID: $HC_TERMINAL_ID. Worktree: $WT_PATH. <task> Report via: hc send $HC_TERMINAL_ID"
+  -i "Parent Terminal ID: $HC_TERMINAL_ID. Worktree: $WT_PATH. <task> Report via: hc send$HC_TERMINAL_ID"
 
-# codex
+# codex (fixed quoting for model instructions file)
 hc run --bg --name <worker> --cwd "$WT_PATH" \
   codex --yolo -m <model> -c 'model_reasoning_effort="<effort>"' \
-  -c "model_instructions_file=\"$HOME/.gemini/config/agents/<role>/agent.md\"" \
-  "Parent Terminal ID: $HC_TERMINAL_ID. Worktree: $WT_PATH. <task> Report via: hc send $HC_TERMINAL_ID"
+  -c 'model_instructions_file="'"$HOME"'/.gemini/config/agents/<role>/agent.md"' \
+  "Parent Terminal ID: $HC_TERMINAL_ID. Worktree: $WT_PATH. <task> Report via: hc send$HC_TERMINAL_ID"
 ```
 
 ## Pipeline
@@ -65,11 +65,11 @@ Launch `coder-<slug>` with task: "Read .task-spec.md, implement the changes, run
 
 Wait for its report via `hc send` before continuing.
 
-### 3. Review and verify in parallel
+### 3. Review and verify in parallel (Optimized: Reviewer audits diff statically; QA runs tests)
 
 Launch both workers against the coder's commit:
 
-- `rev-<slug>`: "Inspect git diff origin/HEAD...HEAD for code and architecture issues. Send REVIEW_VERDICT: APPROVED or REJECTED with file:line reasons."
+- `rev-<slug>`: "Inspect git diff origin/HEAD...HEAD statically for code, logic, and architecture issues (DO NOT RUN TESTS). Send REVIEW_VERDICT: APPROVED or REJECTED with file:line reasons."
 - `qa-<slug>`: "Run full typecheck, lint, test suite, and build. Send QA_VERDICT: APPROVED or REJECTED with error output."
 
 Wait for **both** verdicts. If either rejects, send the exact reasons to the existing coder terminal:
@@ -88,7 +88,7 @@ Only after **both** workers approve:
 cd "$WT_PATH"
 git push -u origin HEAD
 gh pr create --fill
-gh pr comment --body "Automated Adversarial Review (GPT-6.1-Sol xHigh) & QA (Gemini 3.8 Flash High): APPROVED"
+gh pr comment --body "Automated Adversarial Review & QA: APPROVED"
 ```
 
 Auto-merge only when **all** conditions hold:
